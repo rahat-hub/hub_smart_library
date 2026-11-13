@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../constants/app_colors.dart';
+
 import '../../../constants/app_strings.dart';
 import '../../../constants/app_styles.dart';
 import '../../../controllers/book_details_controller.dart';
