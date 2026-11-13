@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../constants/app_strings.dart';
+import '../routes/app_routes.dart';
 
 enum UserRole { student, admin }
 
@@ -129,7 +130,10 @@ class AuthController extends GetxController {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.back(),
+                  onPressed: () {
+                    Get.back();
+                    Get.offNamed(AppRoutes.dashboard);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF163C7E),
                     foregroundColor: Colors.white,

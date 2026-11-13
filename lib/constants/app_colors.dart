@@ -34,4 +34,36 @@ class AppColors {
   static const Color successGreen = Color(0xFF059669);
   static const Color linkBlue = Color(0xFF1D4ED8);
   static const Color warningAmber = Color(0xFFD97706);
+
+  // Dashboard Colors
+  static const Color dashboardBg = Color(0xFFF8FAFD);
+  static const Color heroGradientStart = Color(0xFF0D2852);
+  static const Color heroGradientMid = Color(0xFF123B70);
+  static const Color heroGradientEnd = Color(0xFF0C5668);
+
+  static const Color tealBrand = Color(0xFF0D9488);
+  static const Color tealLightBg = Color(0xFFCCFBF1);
+  static const Color tealChipBorder = Color(0xFF99F6E4);
+
+  static const Color rackChipBg = Color(0xFFF1F5F9);
+  static const Color rackChipText = Color(0xFF334155);
+
+  static const Color availableGreenBg = Color(0xFFECFDF5);
+  static const Color availableGreenText = Color(0xFF059669);
+
+  static const Color waitlistBadgeBg = Color(0xFFFEF2F2);
+  static const Color waitlistBadgeText = Color(0xFFDC2626);
+
+  static const Color promoBannerBg = Color(0xFFEEF2FF);
+  static const Color promoBannerBorder = Color(0xFFDCE7F6);
+
+  static const Color starGold = Color(0xFFFBBF24);
+  static const Color alertDotRed = Color(0xFFEF4444);
+
+  // Book Details Colors
+  static const Color timelineNavy = Color(0xFF0C2B59);
+  static const Color timelineMint = Color(0xFF99F6E4);
+  static const Color badgeCsCore = Color(0xFF1E3A8A);
+  static const Color breadcrumbDashedBorder = Color(0xFF93C5FD);
+  static const Color lightRowBg = Color(0xFFF8FAFC);
 }

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Bash(swift /tmp/ocr.swift /tmp/top2.png)",
+      "Bash(swift /tmp/ocr.swift /tmp/cat2.png)",
+      "Bash(swift /tmp/ocr.swift /tmp/feat2.png)",
+      "Bash(swift /tmp/ocr.swift /tmp/chip1.png)",
+      "Bash(swift /tmp/ocr.swift /tmp/chip1inv.png)"
+    ]
+  }
+}

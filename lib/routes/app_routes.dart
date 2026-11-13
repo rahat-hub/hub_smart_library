@@ -1,10 +1,14 @@
 import 'package:get/get.dart';
 import '../views/splash/splash_screen.dart';
 import '../views/login/login_screen.dart';
+import '../views/dashboard/dashboard_screen.dart';
+import '../views/book_details/book_details_screen.dart';
 
 class AppRoutes {
   static const String splash = '/';
   static const String login = '/login';
+  static const String dashboard = '/dashboard';
+  static const String bookDetails = '/book-details';
 
   static final List<GetPage> routes = [
     GetPage(
@@ -18,6 +22,18 @@ class AppRoutes {
       page: () => const LoginScreen(),
       transition: Transition.rightToLeftWithFade,
       transitionDuration: const Duration(milliseconds: 400),
+    ),
+    GetPage(
+      name: dashboard,
+      page: () => const DashboardScreen(),
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 400),
+    ),
+    GetPage(
+      name: bookDetails,
+      page: () => const BookDetailsScreen(),
+      transition: Transition.rightToLeftWithFade,
+      transitionDuration: const Duration(milliseconds: 350),
     ),
   ];
 }

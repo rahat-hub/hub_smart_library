@@ -197,4 +197,244 @@ class AppStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.slateSubtitle,
   );
+
+  // Dashboard Styles
+  static TextStyle universityLogoSub = GoogleFonts.hindSiliguri(
+    fontSize: 10.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.tealBrand,
+    letterSpacing: 1.2,
+  );
+
+  static TextStyle smartLibraryLogoTitle = GoogleFonts.hindSiliguri(
+    fontSize: 16.5,
+    fontWeight: FontWeight.w800,
+    color: AppColors.slateHeading,
+    letterSpacing: -0.3,
+    height: 1.1,
+  );
+
+  static TextStyle heroSessionTag = GoogleFonts.hindSiliguri(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w600,
+    color: const Color(0xFF7DD3FC),
+  );
+
+  static TextStyle heroGreeting = GoogleFonts.hindSiliguri(
+    fontSize: 21.0,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+    height: 1.2,
+  );
+
+  static TextStyle heroGreetingTablet = GoogleFonts.hindSiliguri(
+    fontSize: 25.0,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+    height: 1.2,
+  );
+
+  static TextStyle heroStudentId = GoogleFonts.hindSiliguri(
+    fontSize: 12.5,
+    fontWeight: FontWeight.w500,
+    color: const Color(0xFFBAE6FD),
+    letterSpacing: 0.5,
+  );
+
+  static TextStyle digitalPassButton = GoogleFonts.hindSiliguri(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
+
+  static TextStyle heroStatLabel = GoogleFonts.hindSiliguri(
+    fontSize: 11.0,
+    fontWeight: FontWeight.w500,
+    color: const Color(0xFFD1E6FF),
+  );
+
+  static TextStyle heroStatValue = GoogleFonts.hindSiliguri(
+    fontSize: 17.0,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+  );
+
+  static TextStyle searchInput = GoogleFonts.hindSiliguri(
+    fontSize: 13.5,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle searchHint = GoogleFonts.hindSiliguri(
+    fontSize: 13.0,
+    fontWeight: FontWeight.w400,
+    color: AppColors.slateMuted,
+  );
+
+  static TextStyle sectionTitle = GoogleFonts.hindSiliguri(
+    fontSize: 17.0,
+    fontWeight: FontWeight.w800,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle sectionAction = GoogleFonts.hindSiliguri(
+    fontSize: 13.0,
+    fontWeight: FontWeight.w700,
+    color: AppColors.tealBrand,
+  );
+
+  static TextStyle bookTitle = GoogleFonts.hindSiliguri(
+    fontSize: 14.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.slateHeading,
+    height: 1.25,
+  );
+
+  static TextStyle bookAuthor = GoogleFonts.hindSiliguri(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle ratingText = GoogleFonts.hindSiliguri(
+    fontSize: 11.0,
+    fontWeight: FontWeight.w600,
+    color: Colors.white,
+  );
+
+  static TextStyle availableTag = GoogleFonts.hindSiliguri(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w600,
+    color: AppColors.availableGreenText,
+  );
+
+  static TextStyle borrowBtn = GoogleFonts.hindSiliguri(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
+  );
+
+  static TextStyle rulesBannerTitle = GoogleFonts.hindSiliguri(
+    fontSize: 14.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle rulesBannerSubtitle = GoogleFonts.hindSiliguri(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle catalogCount = GoogleFonts.hindSiliguri(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.slateSubtitle,
+  );
+
+  // Book Details Text Styles
+  static TextStyle detailsScreenTitle = GoogleFonts.hindSiliguri(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w700,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle breadcrumbText = GoogleFonts.hindSiliguri(
+    fontSize: 13.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle breadcrumbSub = GoogleFonts.hindSiliguri(
+    fontSize: 12.5,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle publisherTag = GoogleFonts.hindSiliguri(
+    fontSize: 11.0,
+    fontWeight: FontWeight.w700,
+    color: AppColors.tealBrand,
+    letterSpacing: 0.8,
+  );
+
+  static TextStyle detailsBookTitle = GoogleFonts.hindSiliguri(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w800,
+    color: AppColors.slateHeading,
+    height: 1.2,
+  );
+
+  static TextStyle detailsAuthor = GoogleFonts.hindSiliguri(
+    fontSize: 13.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle ratingTextDetails = GoogleFonts.hindSiliguri(
+    fontSize: 12.5,
+    fontWeight: FontWeight.w600,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle metaLabel = GoogleFonts.hindSiliguri(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle metaValue = GoogleFonts.hindSiliguri(
+    fontSize: 13.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle shelfTitle = GoogleFonts.hindSiliguri(
+    fontSize: 14.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle shelfLocationText = GoogleFonts.hindSiliguri(
+    fontSize: 13.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.navyPrimary,
+  );
+
+  static TextStyle descriptionBody = GoogleFonts.hindSiliguri(
+    fontSize: 13.5,
+    fontWeight: FontWeight.w400,
+    color: const Color(0xFF334155),
+    height: 1.5,
+  );
+
+  static TextStyle toggleReadMore = GoogleFonts.hindSiliguri(
+    fontSize: 12.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.navyPrimary,
+  );
+
+  static TextStyle scheduleHeader = GoogleFonts.hindSiliguri(
+    fontSize: 14.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle scheduleLabel = GoogleFonts.hindSiliguri(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle submitButtonText = GoogleFonts.hindSiliguri(
+    fontSize: 15.0,
+    fontWeight: FontWeight.w700,
+    color: Colors.white,
+  );
+
+  static TextStyle bookmarkLinkText = GoogleFonts.hindSiliguri(
+    fontSize: 13.0,
+    fontWeight: FontWeight.w600,
+    color: AppColors.navyPrimary,
+  );
 }
