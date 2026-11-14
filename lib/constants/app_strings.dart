@@ -65,7 +65,7 @@ class AppStrings {
   static const String smartLibraryTitle = 'Smart Library';
 
   static const String academicSessionTag = '• একাডেমিক সেশন ২০২৪-২৫';
-  static const String welcomeStudentGreeting = 'স্বাগতম, তানভীর আহমেদ!';
+  static const String welcomeStudentGreeting = 'স্বাগতম, তাজুল ইসলাম!';
   static const String defaultStudentIdCode = 'STUDENT ID: CSE-2021-042';
   static const String digitalPass = 'ডিজিটাল পাস';
 
