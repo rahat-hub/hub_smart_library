@@ -513,4 +513,42 @@ class AppStyles {
     fontWeight: FontWeight.w800,
     color: Colors.white,
   );
+
+  // Notification and Activity Text Styles
+  static TextStyle notifSectionTitle = GoogleFonts.hindSiliguri(
+    fontSize: 15.5,
+    fontWeight: FontWeight.w800,
+    color: AppColors.slateHeading,
+    height: 1.2,
+  );
+
+  static TextStyle notifBody = GoogleFonts.hindSiliguri(
+    fontSize: 12.5,
+    fontWeight: FontWeight.w400,
+    color: const Color(0xFF475569),
+    height: 1.45,
+  );
+
+  static TextStyle notifTime = GoogleFonts.hindSiliguri(
+    fontSize: 11.0,
+    fontWeight: FontWeight.w500,
+    color: const Color(0xFF94A3B8),
+  );
+
+  static TextStyle notifBadge = GoogleFonts.hindSiliguri(
+    fontSize: 11.0,
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle notifBookTitle = GoogleFonts.hindSiliguri(
+    fontSize: 13.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle notifBookSubtitle = GoogleFonts.hindSiliguri(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
 }

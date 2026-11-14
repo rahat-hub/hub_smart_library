@@ -177,7 +177,9 @@ class DashboardController extends GetxController {
         Get.toNamed(AppRoutes.borrowedBooks);
       }
     } else if (index == 2) {
-      showNotifications();
+      if (Get.currentRoute != AppRoutes.notifications) {
+        Get.toNamed(AppRoutes.notifications);
+      }
     } else if (index == 3) {
       showDigitalPassDialog();
     }

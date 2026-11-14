@@ -174,4 +174,22 @@ class AppStrings {
 
   static const String totalFinePayLabel = 'সর্বমোট বিলম্ব জরিমানা:';
   static const String payFineButton = 'জরিমানা পরিশোধ করুন';
+
+  // Notification and Activity Page Strings
+  static const String newUpdatesCount = '৪টি নতুন আপডেট';
+  static const String markAllRead = 'সব পড়া হয়েছে';
+
+  static const String filterAllNotifications = 'সকল নোটিফিকেশন';
+  static const String filterRequestStatus = 'রিকোয়েস্ট স্ট্যাটাস';
+  static const String filterReturnAlert = 'রিটার্ন অ্যালার্ট';
+  static const String filterFine = 'জরিমানা';
+
+  static const String needHelpTitle = 'সহায়তা প্রয়োজন?';
+  static const String helpDeskPhone = 'লাইব্রেরি হেল্পডেস্ক: 01700-000000';
+  static const String helpDeskHours = 'সময়: সকাল ৯টা - বিকাল ৫টা (রবি - বৃহস্পতিবার)';
+
+  static const String viewCollectionToken = 'সংগ্রহের টোকেন দেখুন (#REQ-4912)';
+  static const String renewApplication = 'রিনিউ আবেদন (Renew)';
+  static const String payFineNotification = 'ফি পরিশোধ করুন (Pay ৳45.00)';
+  static const String exploreNewCollection = 'নতুন সংগ্রহ ঘুরে দেখুন →';
 }

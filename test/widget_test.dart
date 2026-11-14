@@ -293,4 +293,80 @@ void main() {
     expect(find.text('Discrete Mathematics and Its Applications'), findsOneWidget);
     expect(find.text(AppStrings.btnPayFineAndReturn), findsOneWidget);
   });
+
+  testWidgets('Notification & Activity Mobile Viewport (390x844) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login -> Dashboard
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    await tester.tap(find.text(AppStrings.loginButton));
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    await tester.tap(find.text('ড্যাশবোর্ডে প্রবেশ করুন'));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Tap "Alerts" tab in bottom navigation
+    await tester.tap(find.text(AppStrings.navAlerts));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Verify Notification Screen Elements
+    expect(find.text(AppStrings.markAllRead), findsOneWidget);
+    expect(find.text(AppStrings.filterAllNotifications), findsOneWidget);
+    expect(find.text(AppStrings.filterRequestStatus), findsOneWidget);
+    expect(find.text(AppStrings.filterReturnAlert), findsOneWidget);
+    expect(find.text(AppStrings.filterFine), findsOneWidget);
+
+    // Verify Notification Cards
+    expect(find.text('ইস্যু রিকোয়েস্ট অনুমোদিত হয়েছে!'), findsOneWidget);
+    expect(find.text('জরুরি রিটার্ন রিমাইন্ডার!'), findsOneWidget);
+    expect(find.text('বিলম্ব ফি গণনা ও নোটিশ'), findsOneWidget);
+    expect(find.text('নতুন বই এসেছে (New Book Arrival)'), findsOneWidget);
+    expect(find.text(AppStrings.needHelpTitle), findsOneWidget);
+  });
+
+  testWidgets('Notification & Activity Tablet Viewport (768x1024) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(768, 1024);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login -> Dashboard
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    await tester.tap(find.text(AppStrings.loginButton));
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    await tester.tap(find.text('ড্যাশবোর্ডে প্রবেশ করুন'));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Tap "Alerts" tab in bottom navigation
+    await tester.tap(find.text(AppStrings.navAlerts));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Verify Notification Cards on Tablet
+    expect(find.text('ইস্যু রিকোয়েস্ট অনুমোদিত হয়েছে!'), findsOneWidget);
+    expect(find.text('জরুরি রিটার্ন রিমাইন্ডার!'), findsOneWidget);
+    expect(find.text('বিলম্ব ফি গণনা ও নোটিশ'), findsOneWidget);
+    expect(find.text(AppStrings.exploreNewCollection), findsOneWidget);
+  });
 }
