@@ -11,7 +11,7 @@ class DashboardController extends GetxController {
   late TextEditingController searchController;
 
   // Student details
-  final RxString studentName = 'তানভীর আহমেদ'.obs;
+  final RxString studentName = 'তাজুল ইসলাম'.obs;
   final RxString studentId = 'CSE-2021-042'.obs;
   final RxString sessionYear = '২০২৪-২৫'.obs;
   final RxInt borrowedCount = 3.obs;
