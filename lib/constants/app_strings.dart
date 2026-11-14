@@ -61,7 +61,7 @@ class AppStrings {
   static const String helpDeskHelpline = 'হেল্পলাইন: ০১৭০০-০০০০০০ (সকাল ৯টা - রাত ৮টা)';
 
   // Dashboard Strings
-  static const String universityUpper = 'UNIVERSITY';
+  static const String universityUpper = 'HAMDARD UNIVERSITY';
   static const String smartLibraryTitle = 'Smart Library';
 
   static const String academicSessionTag = '• একাডেমিক সেশন ২০২৪-২৫';

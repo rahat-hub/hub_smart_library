@@ -76,6 +76,30 @@ class DashboardController extends GetxController {
         coverStyle: BookCoverStyle.microservices,
         primaryColor: const Color(0xFF1E293B),
       ),
+      BookModel(
+        id: 'pop_3',
+        title: 'Microservices Patterns',
+        author: 'Chris Richardson',
+        rating: 4.7,
+        reviewCount: 82,
+        availableCopies: 6,
+        rack: 'Rack C-1',
+        category: AppStrings.catComputerScience,
+        coverStyle: BookCoverStyle.microservices,
+        primaryColor: const Color(0xFF1E293B),
+      ),
+      BookModel(
+        id: 'pop_2',
+        title: 'Deep Learning with Python',
+        author: 'François Chollet',
+        rating: 4.8,
+        reviewCount: 95,
+        availableCopies: 2,
+        rack: 'Rack A-3',
+        category: AppStrings.catComputerScience,
+        coverStyle: BookCoverStyle.deepLearning,
+        primaryColor: const Color(0xFFFAF7F2),
+      ),
     ].obs;
 
     catalogBooks = <BookModel>[
