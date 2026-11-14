@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../../../constants/app_strings.dart';
 import '../../../constants/app_styles.dart';
 import '../../../controllers/dashboard_controller.dart';
+import '../../../routes/app_routes.dart';
 
 class StudentHeroCard extends StatelessWidget {
   final DashboardController controller;
@@ -144,13 +145,16 @@ class StudentHeroCard extends StatelessWidget {
             children: [
               // Stat 1: বর্তমানে ধার নেওয়া (Currently Borrowed)
               Expanded(
-                child: _buildGlassStatCard(
-                  icon: Icons.auto_stories_rounded,
-                  label: AppStrings.currentlyBorrowed,
-                  valueWidget: Obx(
-                    () => Text(
-                      '${controller.borrowedCount.value}টি বই',
-                      style: AppStyles.heroStatValue,
+                child: GestureDetector(
+                  onTap: () => Get.toNamed(AppRoutes.borrowedBooks),
+                  child: _buildGlassStatCard(
+                    icon: Icons.auto_stories_rounded,
+                    label: AppStrings.currentlyBorrowed,
+                    valueWidget: Obx(
+                      () => Text(
+                        '${controller.borrowedCount.value}টি বই',
+                        style: AppStyles.heroStatValue,
+                      ),
                     ),
                   ),
                 ),
@@ -160,13 +164,16 @@ class StudentHeroCard extends StatelessWidget {
 
               // Stat 2: বকেয়া লেট ফি (Pending Late Fee)
               Expanded(
-                child: _buildGlassStatCard(
-                  icon: Icons.payments_outlined,
-                  label: AppStrings.pendingLateFee,
-                  valueWidget: Obx(
-                    () => Text(
-                      controller.pendingFine.value,
-                      style: AppStyles.heroStatValue,
+                child: GestureDetector(
+                  onTap: () => Get.toNamed(AppRoutes.borrowedBooks),
+                  child: _buildGlassStatCard(
+                    icon: Icons.payments_outlined,
+                    label: AppStrings.pendingLateFee,
+                    valueWidget: Obx(
+                      () => Text(
+                        controller.pendingFine.value,
+                        style: AppStyles.heroStatValue,
+                      ),
                     ),
                   ),
                 ),

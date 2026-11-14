@@ -85,6 +85,12 @@ class BookCoverWidget extends StatelessWidget {
         return const Color(0xFFF1F5F9);
       case BookCoverStyle.pythonDataStructures:
         return const Color(0xFF132F5C);
+      case BookCoverStyle.networkingKurose:
+        return const Color(0xFF1B3B6F);
+      case BookCoverStyle.operatingSystemsDino:
+        return const Color(0xFF1B4965);
+      case BookCoverStyle.discreteMathRosen:
+        return const Color(0xFFF1F5F9);
     }
   }
 
@@ -106,6 +112,12 @@ class BookCoverWidget extends StatelessWidget {
         return _buildDatabaseCover();
       case BookCoverStyle.pythonDataStructures:
         return _buildPythonDataStructuresCover();
+      case BookCoverStyle.networkingKurose:
+        return _buildNetworkingKuroseCover();
+      case BookCoverStyle.operatingSystemsDino:
+        return _buildOperatingSystemsCover();
+      case BookCoverStyle.discreteMathRosen:
+        return _buildDiscreteMathCover();
     }
   }
 
@@ -589,6 +601,180 @@ class BookCoverWidget extends StatelessWidget {
                 color: const Color(0xFF67E8F9),
               ),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  // 9. Computer Networking: A Top-Down Approach (Kurose & Ross)
+  Widget _buildNetworkingKuroseCover() {
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFFE2E8F0),
+            Color(0xFF1E3A8A),
+            Color(0xFF0F172A),
+          ],
+          stops: [0.0, 0.35, 1.0],
+        ),
+      ),
+      padding: EdgeInsets.all(isThumbnail ? 5 : 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1.5),
+            color: const Color(0xFF0284C7),
+            child: Text(
+              'SEVENTH EDITION',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: isThumbnail ? 3.5 : 6,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+          SizedBox(height: isThumbnail ? 2 : 4),
+          Text(
+            'COMPUTER\nNETWORKING',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: isThumbnail ? 6.5 : 11,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 0.3,
+              height: 1.1,
+            ),
+          ),
+          const Spacer(),
+          Center(
+            child: Icon(
+              Icons.language_rounded,
+              size: isThumbnail ? 20 : 38,
+              color: const Color(0xFF38BDF8),
+            ),
+          ),
+          const Spacer(),
+          Text(
+            'Kurose & Ross',
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.9),
+              fontSize: isThumbnail ? 5 : 8,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // 10. Operating System Concepts (Silberschatz Dinosaur Book)
+  Widget _buildOperatingSystemsCover() {
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(0xFF1E3A5F),
+            Color(0xFF0F2537),
+          ],
+        ),
+      ),
+      padding: EdgeInsets.all(isThumbnail ? 5 : 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'OPERATING\nSYSTEM\nCONCEPTS',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: isThumbnail ? 6.5 : 11,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 0.2,
+              height: 1.1,
+            ),
+          ),
+          SizedBox(height: isThumbnail ? 2 : 4),
+          Text(
+            'Tenth Edition',
+            style: TextStyle(
+              color: const Color(0xFF38BDF8),
+              fontSize: isThumbnail ? 4 : 7,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const Spacer(),
+          Center(
+            child: Icon(
+              Icons.pets_rounded,
+              size: isThumbnail ? 18 : 34,
+              color: const Color(0xFFFBBF24).withValues(alpha: 0.85),
+            ),
+          ),
+          const Spacer(),
+          Text(
+            'Silberschatz',
+            style: TextStyle(
+              color: Colors.white.withValues(alpha: 0.85),
+              fontSize: isThumbnail ? 5 : 8,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // 11. Discrete Mathematics and Its Applications (Kenneth H. Rosen)
+  Widget _buildDiscreteMathCover() {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFFF8FAFC),
+        border: Border.all(color: const Color(0xFFE2E8F0)),
+      ),
+      padding: EdgeInsets.all(isThumbnail ? 5 : 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'DISCRETE\nMATHEMATICS',
+            style: TextStyle(
+              color: const Color(0xFF0F172A),
+              fontSize: isThumbnail ? 6.5 : 11,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 0.2,
+              height: 1.1,
+            ),
+          ),
+          SizedBox(height: isThumbnail ? 2 : 4),
+          Text(
+            '& ITS APPLICATIONS',
+            style: TextStyle(
+              color: const Color(0xFF0284C7),
+              fontSize: isThumbnail ? 4 : 7,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          const Spacer(),
+          Center(
+            child: Icon(
+              Icons.polyline_rounded,
+              size: isThumbnail ? 18 : 36,
+              color: const Color(0xFF64748B),
+            ),
+          ),
+          const Spacer(),
+          Text(
+            'Kenneth H. Rosen',
+            style: TextStyle(
+              color: const Color(0xFF334155),
+              fontSize: isThumbnail ? 5 : 8,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ],
       ),

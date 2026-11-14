@@ -9,6 +9,9 @@ enum BookCoverStyle {
   artificialIntelligence,
   databaseSystems,
   pythonDataStructures,
+  networkingKurose,
+  operatingSystemsDino,
+  discreteMathRosen,
 }
 
 class BookModel {

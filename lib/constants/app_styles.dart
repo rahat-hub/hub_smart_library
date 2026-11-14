@@ -437,4 +437,80 @@ class AppStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.navyPrimary,
   );
+
+  // Borrowed Books & Fine Text Styles
+  static TextStyle semesterUserText = GoogleFonts.hindSiliguri(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle activeMemberBadge = GoogleFonts.hindSiliguri(
+    fontSize: 11.0,
+    fontWeight: FontWeight.w700,
+    color: const Color(0xFF15803D),
+  );
+
+  static TextStyle metricCardLabel = GoogleFonts.hindSiliguri(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle metricCardValue = GoogleFonts.hindSiliguri(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w800,
+    color: AppColors.slateHeading,
+    letterSpacing: -0.3,
+  );
+
+  static TextStyle segmentTabActive = GoogleFonts.hindSiliguri(
+    fontSize: 13.0,
+    fontWeight: FontWeight.w700,
+    color: AppColors.navyPrimary,
+  );
+
+  static TextStyle segmentTabInactive = GoogleFonts.hindSiliguri(
+    fontSize: 13.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle borrowedBookTitle = GoogleFonts.hindSiliguri(
+    fontSize: 15.5,
+    fontWeight: FontWeight.w800,
+    color: AppColors.slateHeading,
+    height: 1.2,
+  );
+
+  static TextStyle borrowedBookAuthor = GoogleFonts.hindSiliguri(
+    fontSize: 12.0,
+    fontWeight: FontWeight.w500,
+    color: AppColors.slateSubtitle,
+  );
+
+  static TextStyle policyTitle = GoogleFonts.hindSiliguri(
+    fontSize: 13.5,
+    fontWeight: FontWeight.w700,
+    color: AppColors.slateHeading,
+  );
+
+  static TextStyle policyBody = GoogleFonts.hindSiliguri(
+    fontSize: 11.5,
+    fontWeight: FontWeight.w400,
+    color: AppColors.slateSubtitle,
+    height: 1.45,
+  );
+
+  static TextStyle floatingTotalLabel = GoogleFonts.hindSiliguri(
+    fontSize: 11.0,
+    fontWeight: FontWeight.w500,
+    color: const Color(0xFF93C5FD),
+  );
+
+  static TextStyle floatingTotalAmount = GoogleFonts.hindSiliguri(
+    fontSize: 18.0,
+    fontWeight: FontWeight.w800,
+    color: Colors.white,
+  );
 }

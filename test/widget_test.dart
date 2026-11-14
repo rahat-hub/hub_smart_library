@@ -219,4 +219,78 @@ void main() {
     expect(find.text(AppStrings.tentativeReturnDateLabel), findsOneWidget);
     expect(find.text(AppStrings.lateFeePolicyLabel), findsOneWidget);
   });
+
+  testWidgets('Borrowed Books & Fine Mobile Viewport (390x844) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login -> Dashboard
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    await tester.tap(find.text(AppStrings.loginButton));
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    await tester.tap(find.text('ড্যাশবোর্ডে প্রবেশ করুন'));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Tap "Borrowed" tab in bottom navigation
+    await tester.tap(find.text(AppStrings.navBorrowed));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Verify Borrowed Screen Elements
+    expect(find.text(AppStrings.springSemesterUser), findsOneWidget);
+    expect(find.text(AppStrings.activeMemberBadge), findsOneWidget);
+    expect(find.text(AppStrings.totalIssuedLabel), findsOneWidget);
+    expect(find.text(AppStrings.returnPendingLabel), findsOneWidget);
+    expect(find.text(AppStrings.pendingFineLabel), findsOneWidget);
+    expect(find.text(AppStrings.tabCurrentBooks), findsOneWidget);
+    expect(find.text(AppStrings.tabReturnedBooks), findsOneWidget);
+    expect(find.text(AppStrings.borrowedListTitle), findsOneWidget);
+    expect(find.text(AppStrings.policyTitle), findsOneWidget);
+    expect(find.text(AppStrings.payFineButton), findsOneWidget);
+  });
+
+  testWidgets('Borrowed Books & Fine Tablet Viewport (768x1024) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(768, 1024);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login -> Dashboard
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    await tester.tap(find.text(AppStrings.loginButton));
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    await tester.tap(find.text('ড্যাশবোর্ডে প্রবেশ করুন'));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Tap "Borrowed" tab in bottom navigation
+    await tester.tap(find.text(AppStrings.navBorrowed));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Verify Borrowed Books Cards on Tablet
+    expect(find.text('Computer Networking: A Top-Down Approach'), findsOneWidget);
+    expect(find.text('Operating System Concepts'), findsOneWidget);
+    expect(find.text('Discrete Mathematics and Its Applications'), findsOneWidget);
+    expect(find.text(AppStrings.btnPayFineAndReturn), findsOneWidget);
+  });
 }

@@ -145,4 +145,33 @@ class AppStrings {
   static const String recipientCertification = 'গ্রহীতার প্রত্যয়ন ও অনুমোদন';
   static const String submitIssueRequest = 'ইস্যু রিকোয়েস্ট পাঠান (Submit)';
   static const String bookmarkForLater = 'পরে পড়ার জন্য বুকমার্ক করুন';
+
+  // Borrowed Books & Fine Page Strings
+  static const String springSemesterUser = 'বসন্ত সেমিস্টার ২০২৪ • ইউজার আইডি: CS-2104';
+  static const String activeMemberBadge = 'সক্রিয় সদস্য';
+
+  static const String totalIssuedLabel = 'মোট ইস্যুকৃত';
+  static const String totalIssuedCount = '৩টি বই';
+  static const String returnPendingLabel = 'রিটার্ন বাকি';
+  static const String returnPendingCount = '১টি আজই';
+  static const String pendingFineLabel = 'বকেয়া ফাইন';
+  static const String pendingFineTotal = '৳৪৫.০০';
+
+  static const String tabCurrentBooks = 'বর্তমান বইসমূহ (৩)';
+  static const String tabReturnedBooks = 'ফেরত দেওয়া বই (১৮)';
+
+  static const String borrowedListTitle = 'ধার নেওয়া বইয়ের তালিকা';
+  static const String sessionBadgeText = 'সেশন ২০২৪-২৫';
+  static const String lastSyncText = 'সর্বশেষ সিঙ্ক: আজ ১০:১৫ AM';
+
+  static const String btnReturnBarcode = 'রিটার্ন বারকোড';
+  static const String btnRenewRequest = 'রিনিউ রিকোয়েস্ট';
+  static const String btnPayFineAndReturn = 'বিলম্ব ফি পরিশোধ ও রিটার্ন প্রসেস';
+
+  static const String policyTitle = 'স্মার্ট লাইব্রেরি নীতিমালা ও শর্তাবলী';
+  static const String policyDescription =
+      'নির্ধারিত সময় পার হলে দৈনিক ৫ টাকা হারে জরিমানা প্রযোজ্য হবে। মোট জরিমানা বকেয়া থাকলে ডিজিটাল গেটে নতুন বই ইস্যু প্রক্রিয়া সাময়িকভাবে স্থগিত থাকবে।';
+
+  static const String totalFinePayLabel = 'সর্বমোট বিলম্ব জরিমানা:';
+  static const String payFineButton = 'জরিমানা পরিশোধ করুন';
 }

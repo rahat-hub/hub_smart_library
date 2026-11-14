@@ -66,4 +66,20 @@ class AppColors {
   static const Color badgeCsCore = Color(0xFF1E3A8A);
   static const Color breadcrumbDashedBorder = Color(0xFF93C5FD);
   static const Color lightRowBg = Color(0xFFF8FAFC);
+
+  // Borrowed Books & Fine Colors
+  static const Color dueTodayBadgeBg = Color(0xFFFEF3C7);
+  static const Color dueTodayBadgeText = Color(0xFFB45309);
+  static const Color dueTodayBar = Color(0xFFF59E0B);
+
+  static const Color overdueBadgeBg = Color(0xFFFEE2E2);
+  static const Color overdueBadgeText = Color(0xFFDC2626);
+  static const Color overdueButtonBg = Color(0xFFB91C1C);
+
+  static const Color onTimeBadgeBg = Color(0xFFCCFBF1);
+  static const Color onTimeBadgeText = Color(0xFF0F766E);
+  static const Color onTimeBar = Color(0xFF0D9488);
+
+  static const Color floatingBarNavy = Color(0xFF0C2B59);
+  static const Color payFineRed = Color(0xFFDC2626);
 }

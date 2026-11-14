@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_strings.dart';
 import '../models/book_model.dart';
+import '../routes/app_routes.dart';
 
 class DashboardController extends GetxController {
   final RxInt currentNavIndex = 0.obs;
@@ -167,7 +168,17 @@ class DashboardController extends GetxController {
 
   void selectNavIndex(int index) {
     currentNavIndex.value = index;
-    if (index == 3) {
+    if (index == 0) {
+      if (Get.currentRoute != AppRoutes.dashboard) {
+        Get.offNamed(AppRoutes.dashboard);
+      }
+    } else if (index == 1) {
+      if (Get.currentRoute != AppRoutes.borrowedBooks) {
+        Get.toNamed(AppRoutes.borrowedBooks);
+      }
+    } else if (index == 2) {
+      showNotifications();
+    } else if (index == 3) {
       showDigitalPassDialog();
     }
   }
