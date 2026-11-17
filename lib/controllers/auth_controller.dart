@@ -132,7 +132,11 @@ class AuthController extends GetxController {
                 child: ElevatedButton(
                   onPressed: () {
                     Get.back();
-                    Get.offNamed(AppRoutes.dashboard);
+                    if (currentRole.value == UserRole.admin) {
+                      Get.offNamed(AppRoutes.adminDashboard);
+                    } else {
+                      Get.offNamed(AppRoutes.dashboard);
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF163C7E),

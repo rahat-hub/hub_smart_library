@@ -3,6 +3,7 @@ import '../views/splash/splash_screen.dart';
 import '../views/login/login_screen.dart';
 import '../views/registration/registration_screen.dart';
 import '../views/dashboard/dashboard_screen.dart';
+import '../views/admin_dashboard/admin_dashboard_screen.dart';
 import '../views/book_details/book_details_screen.dart';
 import '../views/borrowed_books/borrowed_books_screen.dart';
 import '../views/notifications/notification_screen.dart';
@@ -13,6 +14,7 @@ class AppRoutes {
   static const String login = '/login';
   static const String register = '/register';
   static const String dashboard = '/dashboard';
+  static const String adminDashboard = '/admin-dashboard';
   static const String bookDetails = '/book-details';
   static const String borrowedBooks = '/borrowed-books';
   static const String notifications = '/notifications';
@@ -41,6 +43,12 @@ class AppRoutes {
     GetPage(
       name: dashboard,
       page: () => const DashboardScreen(),
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 400),
+    ),
+    GetPage(
+      name: adminDashboard,
+      page: () => const AdminDashboardScreen(),
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 400),
     ),

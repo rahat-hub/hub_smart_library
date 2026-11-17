@@ -551,4 +551,63 @@ class AppStrings {
   static String get helpdeskHoursShort =>
       isEnglish ? 'Library Helpdesk (9 AM - 5 PM)' : 'লাইব্রেরি হেল্পডেস্ক (সকাল ৯টা - বিকাল ৫টা)';
   static String get btnHelpline => isEnglish ? 'Helpline' : 'হেল্পলাইন';
+
+  // Admin Dashboard Strings
+  static String get adminDashboardTitle => isEnglish ? 'Admin Dashboard' : 'অ্যাডমিন ড্যাশবোর্ড';
+  static String get adminGreeting =>
+      isEnglish ? 'Good Morning, Dr. Mohammad Rahman' : 'শুভ সকাল, ড. মোহাম্মদ রহমান';
+  static String get adminRole => isEnglish
+      ? 'Chief Librarian • Central Library Administration'
+      : 'প্রধান গ্রন্থাগারিক • কেন্দ্রীয় লাইব্রেরি প্রশাসন';
+  static String get serverActiveBadge => isEnglish ? 'Server Active' : 'সার্ভার সক্রিয়';
+  static String get adminDateSemester => isEnglish
+      ? '27 April, 2025 | Sunday • Semester 1 • Week 8'
+      : '২৭ এপ্রিল, ২০২৫ | রবিবার • সেমিস্টার ১ • উইক ৮';
+  static String get adminSearchHint => isEnglish
+      ? 'Search by book, student ID (e.g. CSE-2021)...'
+      : 'বই, শিক্ষার্থী আইডি (e.g. CSE-2021) ব্যবহার করে খুঁজুন...';
+
+  static String get circulationMetricsTitle =>
+      isEnglish ? 'Circulation Metrics (Today\'s Overview)' : 'সার্কুলেশন মেট্রিক্স (আজকের ওভারভিউ)';
+  static String get updated2MinsAgo =>
+      isEnglish ? 'Updated: 2 mins ago' : 'আপডেট: ২ মিনিট আগে';
+  static String get quickActionsTitle =>
+      isEnglish ? 'Quick Actions' : 'দ্রুত ব্যবস্থাপনা টুলস (Quick Actions)';
+  static String get liveQueueTitle =>
+      isEnglish ? 'Live Queue' : 'অনুরোধ সারি (Live Queue)';
+  static String get pending4NewBadge => isEnglish ? '4 New' : '৪টি নতুন';
+  static String get urgentOverdueTitle =>
+      isEnglish ? 'Urgent Overdue & Fine Alerts' : 'জরুরি বিলম্ব ও জরিমানা সতর্কতা';
+  static String get actionRequiredBadge =>
+      isEnglish ? 'Action Required' : 'অ্যাকশন প্রয়োজন';
+  static String get inventoryCapacityTitle =>
+      isEnglish ? 'Inventory Capacity & Allocation' : 'ইনভেন্টরি ধারণক্ষমতা ও বণ্টন';
+  static String get departmentalRatioSub => isEnglish
+      ? 'Department-wise active book circulation ratio'
+      : 'বিভাগভিত্তিক সক্রিয় বই সার্কুলেশন রেশিও';
+  static String get auditFeedTitle => isEnglish
+      ? 'Recent Library Transactions (Audit Feed)'
+      : 'সাম্প্রতিক লাইব্রেরি ট্রানজ্যাকশন (Audit Feed)';
+  static String get realtimeBadge => isEnglish ? 'Real-time' : 'রিয়েল-টাইম';
+
+  static String get totalCatalog => isEnglish ? 'Total Catalog' : 'মোট ক্যাটালগ';
+  static String get borrowedBooks => isEnglish ? 'Borrowed Books' : 'ধারকৃত বই';
+  static String get overdue => isEnglish ? 'Overdue' : 'ওভারডিউ';
+  static String get collectedFine => isEnglish ? 'Collected Fine' : 'সংগৃহীত জরিমানা';
+
+  static String get actionIssue => isEnglish ? 'Issue Book' : 'বই ইস্যু';
+  static String get actionReturn => isEnglish ? 'Return' : 'রিটার্ন';
+  static String get actionScanner => isEnglish ? 'Scanner' : 'স্ক্যানার';
+  static String get actionNewBook => isEnglish ? 'New Book' : 'নতুন বই';
+
+  static String get approveBtn => isEnglish ? 'Approve' : 'অনুমোদন করুন (Approve)';
+  static String get rejectBtn => isEnglish ? 'Reject' : 'বাতিল';
+  static String get seeAllRequests => isEnglish ? 'See All >' : 'সব দেখুন >';
+  static String get sendSmsReminder => isEnglish ? 'Send SMS Reminder' : 'এসএমএস রিমাইন্ডার পাঠান';
+
+  static String get adminNavDashboard => isEnglish ? 'Dashboard' : 'Dashboard';
+  static String get adminNavInventory => isEnglish ? 'Inventory' : 'Inventory';
+  static String get adminNavDesk => isEnglish ? 'Desk' : 'Desk';
+  static String get adminNavMembers => isEnglish ? 'Members' : 'Members';
+  static String get adminNavReports => isEnglish ? 'Reports' : 'Reports';
 }

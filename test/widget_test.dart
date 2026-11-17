@@ -503,4 +503,76 @@ void main() {
     expect(find.text(AppStrings.registrationTitle), findsOneWidget);
     expect(find.text(AppStrings.btnUploadFile), findsOneWidget);
   });
+
+  testWidgets('Admin Dashboard Mobile Viewport (390x844) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    // Switch to Admin Tab
+    await tester.tap(find.text(AppStrings.tabAdmin));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    // Tap Login Button
+    await tester.tap(find.text(AppStrings.loginButton));
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    // Tap Dialog Proceed to Dashboard
+    await tester.tap(find.text('ড্যাশবোর্ডে প্রবেশ করুন'));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Verify Admin Dashboard Elements
+    expect(find.text(AppStrings.adminGreeting), findsOneWidget);
+    expect(find.text(AppStrings.circulationMetricsTitle), findsOneWidget);
+    expect(find.text(AppStrings.quickActionsTitle), findsOneWidget);
+    expect(find.text(AppStrings.liveQueueTitle), findsOneWidget);
+    expect(find.text(AppStrings.urgentOverdueTitle), findsOneWidget);
+  });
+
+  testWidgets('Admin Dashboard Tablet Viewport (768x1024) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(768, 1024);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    // Switch to Admin Tab
+    await tester.tap(find.text(AppStrings.tabAdmin));
+    await tester.pump(const Duration(milliseconds: 300));
+
+    // Tap Login Button
+    await tester.tap(find.text(AppStrings.loginButton));
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    // Tap Dialog Proceed to Dashboard
+    await tester.tap(find.text('ড্যাশবোর্ডে প্রবেশ করুন'));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Verify Admin Dashboard Elements on Tablet
+    expect(find.text(AppStrings.adminGreeting), findsOneWidget);
+    expect(find.text(AppStrings.circulationMetricsTitle), findsOneWidget);
+    expect(find.text(AppStrings.inventoryCapacityTitle), findsOneWidget);
+  });
 }

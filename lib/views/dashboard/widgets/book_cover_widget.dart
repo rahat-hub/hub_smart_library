@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../models/book_model.dart';
 
 class BookCoverWidget extends StatelessWidget {
-  final BookModel book;
+  final BookModel? book;
+  final BookCoverStyle? style;
   final double? width;
   final double? height;
   final double borderRadius;
@@ -11,13 +12,17 @@ class BookCoverWidget extends StatelessWidget {
 
   const BookCoverWidget({
     super.key,
-    required this.book,
+    this.book,
+    this.style,
     this.width,
     this.height,
     this.borderRadius = 12.0,
     this.isThumbnail = false,
     this.isCompact = false,
   });
+
+  BookCoverStyle get activeStyle =>
+      style ?? book?.coverStyle ?? BookCoverStyle.algorithmsClrs;
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +77,7 @@ class BookCoverWidget extends StatelessWidget {
   }
 
   Color _getBgColor() {
-    switch (book.coverStyle) {
+    switch (activeStyle) {
       case BookCoverStyle.dataIntensive:
         return const Color(0xFF0F2648);
       case BookCoverStyle.deepLearning:
@@ -101,7 +106,7 @@ class BookCoverWidget extends StatelessWidget {
   }
 
   Widget _buildArtwork() {
-    switch (book.coverStyle) {
+    switch (activeStyle) {
       case BookCoverStyle.dataIntensive:
         return _buildDataIntensiveCover();
       case BookCoverStyle.deepLearning:
