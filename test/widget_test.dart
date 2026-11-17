@@ -369,4 +369,78 @@ void main() {
     expect(find.text('বিলম্ব ফি গণনা ও নোটিশ'), findsOneWidget);
     expect(find.text(AppStrings.exploreNewCollection), findsOneWidget);
   });
+
+  testWidgets('Student Profile & Digital Pass Mobile Viewport (390x844) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login -> Dashboard
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    await tester.tap(find.text(AppStrings.loginButton));
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    await tester.tap(find.text('ড্যাশবোর্ডে প্রবেশ করুন'));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Tap "My Pass" tab in bottom navigation
+    await tester.tap(find.text(AppStrings.navMyPass));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Verify Profile & Digital Pass Elements
+    expect(find.text(AppStrings.studentProfileTitle), findsOneWidget);
+    expect(find.text(AppStrings.smartPassRfidTitle), findsOneWidget);
+    expect(find.text(AppStrings.studentNameDefault), findsOneWidget);
+    expect(find.text(AppStrings.viewLargeQrBtn), findsOneWidget);
+    expect(find.text(AppStrings.institutionalInfoTitle), findsOneWidget);
+    expect(find.text(AppStrings.libraryActivityTitle), findsOneWidget);
+    expect(find.text(AppStrings.priorityReadingHeader), findsOneWidget);
+    expect(find.text(AppStrings.libraryServicesHeader), findsOneWidget);
+    expect(find.text(AppStrings.securitySettingsHeader), findsOneWidget);
+    expect(find.text(AppStrings.logOutButton), findsOneWidget);
+  });
+
+  testWidgets('Student Profile & Digital Pass Tablet Viewport (768x1024) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(768, 1024);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login -> Dashboard
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    await tester.tap(find.text(AppStrings.loginButton));
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    await tester.tap(find.text('ড্যাশবোর্ডে প্রবেশ করুন'));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Tap "My Pass" tab in bottom navigation
+    await tester.tap(find.text(AppStrings.navMyPass));
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Verify Profile Elements on Tablet
+    expect(find.text(AppStrings.studentProfileTitle), findsOneWidget);
+    expect(find.text(AppStrings.smartPassRfidTitle), findsOneWidget);
+    expect(find.text(AppStrings.studentNameDefault), findsOneWidget);
+    expect(find.text(AppStrings.centralLibraryBadge), findsOneWidget);
+  });
 }

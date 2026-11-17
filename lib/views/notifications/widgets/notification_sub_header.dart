@@ -35,8 +35,12 @@ class NotificationSubHeader extends StatelessWidget {
               const SizedBox(width: 7),
               Text(
                 controller.unreadCount > 0
-                    ? '${_toBengaliNumber(controller.unreadCount)}টি নতুন আপডেট'
-                    : 'সব আপডেট পড়া হয়েছে',
+                    ? (AppStrings.isEnglish
+                        ? '${controller.unreadCount} New Updates'
+                        : '${AppStrings.toBengaliNumber(controller.unreadCount)}টি নতুন আপডেট')
+                    : (AppStrings.isEnglish
+                        ? 'All updates read'
+                        : 'সব আপডেট পড়া হয়েছে'),
                 style: const TextStyle(
                   fontSize: 12.5,
                   fontWeight: FontWeight.w700,
@@ -83,19 +87,19 @@ class NotificationSubHeader extends StatelessWidget {
     );
   }
 
-  String _toBengaliNumber(int num) {
-    const map = {
-      '0': '০',
-      '1': '১',
-      '2': '২',
-      '3': '৩',
-      '4': '৪',
-      '5': '৫',
-      '6': '৬',
-      '7': '৭',
-      '8': '৮',
-      '9': '৯',
-    };
-    return num.toString().split('').map((e) => map[e] ?? e).join('');
-  }
+  // String _toBengaliNumber(int num) {
+  //   const map = {
+  //     '0': '০',
+  //     '1': '১',
+  //     '2': '২',
+  //     '3': '৩',
+  //     '4': '৪',
+  //     '5': '৫',
+  //     '6': '৬',
+  //     '7': '৭',
+  //     '8': '৮',
+  //     '9': '৯',
+  //   };
+  //   return num.toString().split('').map((e) => map[e] ?? e).join('');
+  // }
 }

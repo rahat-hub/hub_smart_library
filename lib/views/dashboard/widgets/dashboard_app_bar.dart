@@ -119,7 +119,7 @@ class DashboardAppBar extends StatelessWidget {
 
           // 3. User Profile Avatar
           GestureDetector(
-            onTap: controller.showDigitalPassDialog,
+            onTap: controller.navigateToProfile,
             child: Container(
               padding: const EdgeInsets.all(2.0),
               decoration: BoxDecoration(

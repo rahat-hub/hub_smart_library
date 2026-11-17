@@ -63,9 +63,9 @@ class IssueScheduleCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: const Color(0xFFDBEAFE)),
                 ),
-                child: const Text(
+                child: Text(
                   AppStrings.studentPolicyTag,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11.5,
                     fontWeight: FontWeight.w700,
                     color: AppColors.navyPrimary,

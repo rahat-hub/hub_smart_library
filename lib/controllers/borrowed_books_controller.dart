@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../constants/app_colors.dart';
+import '../constants/app_strings.dart';
 import '../models/borrowed_book_model.dart';
 
 class BorrowedBooksController extends GetxController {
@@ -21,24 +22,7 @@ class BorrowedBooksController extends GetxController {
   int get dueTodayCount =>
       currentBooks.where((b) => b.status == BorrowedStatus.dueToday).length;
 
-  String get totalFineBengali {
-    const map = {
-      '0': '০',
-      '1': '১',
-      '2': '২',
-      '3': '৩',
-      '4': '৪',
-      '5': '৫',
-      '6': '৬',
-      '7': '৭',
-      '8': '৮',
-      '9': '৯',
-      '.': '.',
-    };
-    final formatted = totalPendingFine.value.toStringAsFixed(2);
-    final bengaliDigits = formatted.split('').map((e) => map[e] ?? e).join('');
-    return '৳$bengaliDigits';
-  }
+  String get totalFineBengali => AppStrings.formatCurrency(totalPendingFine.value);
 
   void switchTab(int index) {
     selectedTab.value = index;

@@ -28,7 +28,7 @@ class BorrowedSummaryMetrics extends StatelessWidget {
             label: AppStrings.totalIssuedLabel,
             valueWidget: Obx(
               () => Text(
-                '${controller.totalIssuedCount}টি বই',
+                AppStrings.formatBooksCount(controller.totalIssuedCount),
                 style: AppStyles.metricCardValue.copyWith(
                   fontSize: isTablet ? 20.0 : 17.0,
                 ),
@@ -48,7 +48,7 @@ class BorrowedSummaryMetrics extends StatelessWidget {
             label: AppStrings.returnPendingLabel,
             valueWidget: Obx(
               () => Text(
-                '${controller.dueTodayCount}টি আজই',
+                '${AppStrings.formatNumber(controller.dueTodayCount)} ${AppStrings.isEnglish ? "Today" : "টি আজই"}',
                 style: AppStyles.metricCardValue.copyWith(
                   color: AppColors.warningAmber,
                   fontSize: isTablet ? 20.0 : 17.0,

@@ -373,9 +373,9 @@ class BorrowedBookCard extends StatelessWidget {
         child: ElevatedButton.icon(
           onPressed: controller.payFineModal,
           icon: const Icon(Icons.credit_card_rounded, size: 18),
-          label: const Text(
+          label: Text(
             AppStrings.btnPayFineAndReturn,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13.0),
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13.0),
           ),
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.overdueButtonBg,

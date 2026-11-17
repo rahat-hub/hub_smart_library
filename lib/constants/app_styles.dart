@@ -199,6 +199,12 @@ class AppStyles {
   );
 
   // Dashboard Styles
+  static TextStyle dashboardHeaderTitle = GoogleFonts.hindSiliguri(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w800,
+    color: AppColors.slateHeading,
+  );
+
   static TextStyle universityLogoSub = GoogleFonts.hindSiliguri(
     fontSize: 10.5,
     fontWeight: FontWeight.w700,

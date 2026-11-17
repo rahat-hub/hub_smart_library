@@ -108,7 +108,7 @@ class SplashScreen extends StatelessWidget {
                   const SizedBox(height: 18),
 
                   // Feature Chips Row 1
-                  const Wrap(
+                  Wrap(
                     alignment: WrapAlignment.center,
                     spacing: 10,
                     runSpacing: 10,
@@ -120,7 +120,7 @@ class SplashScreen extends StatelessWidget {
                       FeatureChipWidget(
                         icon: Icons.bolt_rounded,
                         label: AppStrings.chipInstantIssue,
-                        iconColor: Color(0xFF38BDF8),
+                        iconColor: const Color(0xFF38BDF8),
                       ),
                     ],
                   ),
@@ -128,10 +128,10 @@ class SplashScreen extends StatelessWidget {
                   const SizedBox(height: 10),
 
                   // Feature Chip Row 2 (Centered Live Catalog)
-                  const FeatureChipWidget(
+                  FeatureChipWidget(
                     icon: Icons.grid_view_rounded,
                     label: AppStrings.chipLiveCatalog,
-                    iconColor: Color(0xFF818CF8),
+                    iconColor: const Color(0xFF818CF8),
                   ),
 
                   const SizedBox(height: 22),

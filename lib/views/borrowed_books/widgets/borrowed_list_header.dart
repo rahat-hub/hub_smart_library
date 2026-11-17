@@ -35,9 +35,9 @@ class BorrowedListHeader extends StatelessWidget {
                 borderRadius: BorderRadius.circular(6),
                 border: Border.all(color: const Color(0xFFDBEAFE)),
               ),
-              child: const Text(
+              child: Text(
                 AppStrings.sessionBadgeText,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 10.5,
                   fontWeight: FontWeight.w700,
                   color: AppColors.linkBlue,

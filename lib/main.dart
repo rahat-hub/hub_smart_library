@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'constants/app_colors.dart';
 import 'constants/app_strings.dart';
+import 'localization/app_translations.dart';
 import 'routes/app_routes.dart';
 
 void main() {
@@ -18,6 +19,9 @@ class HubSmartLibraryApp extends StatelessWidget {
     return GetMaterialApp(
       title: AppStrings.appTitle,
       debugShowCheckedModeBanner: false,
+      translations: AppTranslations(),
+      locale: const Locale('bn', 'BD'),
+      fallbackLocale: const Locale('en', 'US'),
       theme: ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,

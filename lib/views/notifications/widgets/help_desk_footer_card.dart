@@ -63,18 +63,18 @@ class HelpDeskFooterCard extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 2),
-                const Text(
+                Text(
                   AppStrings.helpDeskPhone,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12.5,
                     fontWeight: FontWeight.w700,
                     color: AppColors.linkBlue,
                   ),
                 ),
                 const SizedBox(height: 2),
-                const Text(
+                Text(
                   AppStrings.helpDeskHours,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11.0,
                     fontWeight: FontWeight.w500,
                     color: Color(0xFF64748B),

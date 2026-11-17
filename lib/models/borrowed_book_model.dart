@@ -1,3 +1,4 @@
+import '../constants/app_strings.dart';
 import 'book_model.dart';
 
 enum BorrowedStatus {
@@ -42,23 +43,10 @@ class BorrowedBookModel {
   });
 
   String get fineTextBengali {
-    if (totalFine <= 0) return 'জরিমানা: ৳০.০০';
-    const map = {
-      '0': '০',
-      '1': '১',
-      '2': '২',
-      '3': '৩',
-      '4': '৪',
-      '5': '৫',
-      '6': '৬',
-      '7': '৭',
-      '8': '৮',
-      '9': '৯',
-      '.': '.',
-    };
-    final formatted = totalFine.toStringAsFixed(2);
-    final bengaliDigits = formatted.split('').map((e) => map[e] ?? e).join('');
-    return '৳$bengaliDigits বকেয়া';
+    if (totalFine <= 0) {
+      return AppStrings.isEnglish ? 'Fine: ৳0.00' : 'জরিমানা: ৳০.০০';
+    }
+    return '${AppStrings.formatCurrency(totalFine)} ${AppStrings.isEnglish ? "Due" : "বকেয়া"}';
   }
 
   static List<BorrowedBookModel> getSampleBorrowedBooks() {

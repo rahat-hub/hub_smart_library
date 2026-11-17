@@ -5,6 +5,7 @@ import '../views/dashboard/dashboard_screen.dart';
 import '../views/book_details/book_details_screen.dart';
 import '../views/borrowed_books/borrowed_books_screen.dart';
 import '../views/notifications/notification_screen.dart';
+import '../views/profile/profile_screen.dart';
 
 class AppRoutes {
   static const String splash = '/';
@@ -13,6 +14,8 @@ class AppRoutes {
   static const String bookDetails = '/book-details';
   static const String borrowedBooks = '/borrowed-books';
   static const String notifications = '/notifications';
+  static const String profile = '/profile';
+  static const String myPass = '/profile';
 
   static final List<GetPage> routes = [
     GetPage(
@@ -48,6 +51,12 @@ class AppRoutes {
     GetPage(
       name: notifications,
       page: () => const NotificationScreen(),
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 350),
+    ),
+    GetPage(
+      name: profile,
+      page: () => const ProfileScreen(),
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 350),
     ),

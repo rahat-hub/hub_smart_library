@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../constants/app_colors.dart';
+import '../../constants/app_strings.dart';
 import '../../controllers/dashboard_controller.dart';
 import '../../controllers/notification_controller.dart';
 import '../../models/notification_model.dart';
@@ -25,8 +26,12 @@ class NotificationScreen extends StatelessWidget {
         ? Get.find<DashboardController>()
         : Get.put(DashboardController());
 
-    // Sync active nav index
-    dashboardController.currentNavIndex.value = 2;
+    // Sync active nav index safely after build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (dashboardController.currentNavIndex.value != 2) {
+        dashboardController.currentNavIndex.value = 2;
+      }
+    });
 
     return Scaffold(
       backgroundColor: AppColors.dashboardBg,
@@ -36,9 +41,9 @@ class NotificationScreen extends StatelessWidget {
         desktop: _buildDesktopLayout(context, controller, dashboardController),
       ),
       bottomNavigationBar: ResponsiveLayout(
-        mobile: DashboardBottomNav(controller: dashboardController, isTablet: false),
-        tablet: DashboardBottomNav(controller: dashboardController, isTablet: true),
-        desktop: DashboardBottomNav(controller: dashboardController, isTablet: true),
+        mobile: DashboardBottomNav(controller: dashboardController, isTablet: false, activeIndex: 2),
+        tablet: DashboardBottomNav(controller: dashboardController, isTablet: true, activeIndex: 2),
+        desktop: DashboardBottomNav(controller: dashboardController, isTablet: true, activeIndex: 2),
       ),
     );
   }
@@ -194,9 +199,9 @@ class NotificationScreen extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 40),
           alignment: Alignment.center,
-          child: const Text(
-            'কোন নোটিফিকেশন নেই',
-            style: TextStyle(color: AppColors.slateSubtitle),
+          child: Text(
+            AppStrings.noNotificationsFound,
+            style: const TextStyle(color: AppColors.slateSubtitle),
           ),
         );
       }
@@ -205,7 +210,7 @@ class NotificationScreen extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: items.length,
-        separatorBuilder: (_, __) => const SizedBox(height: 12),
+        separatorBuilder: (_, _) => const SizedBox(height: 12),
         itemBuilder: (context, index) {
           final notif = items[index];
 

@@ -139,7 +139,10 @@ class FineNoticeCard extends StatelessWidget {
                         ),
                         const SizedBox(height: 1),
                         Text(
-                          notification.fineRate ?? 'বিলম্ব সময়: ৯ দিন (৳৫/দিন)',
+                          notification.fineRate ??
+                              (AppStrings.isEnglish
+                                  ? 'Overdue: 9 days (৳5/day)'
+                                  : 'বিলম্ব সময়: ৯ দিন (৳৫/দিন)'),
                           style: const TextStyle(fontSize: 11.0, color: Color(0xFF64748B)),
                         ),
                       ],
@@ -152,7 +155,7 @@ class FineNoticeCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      '৳${notification.fineAmount?.toStringAsFixed(2) ?? '৪৫.০০'}',
+                      AppStrings.formatCurrency(notification.fineAmount ?? 45.0),
                       style: const TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.w900,
@@ -160,7 +163,7 @@ class FineNoticeCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'চালান: ${notification.invoiceId ?? '#FIN-8201'}',
+                      '${AppStrings.isEnglish ? "Invoice" : "চালান"}: ${notification.invoiceId ?? '#FIN-8201'}',
                       style: const TextStyle(fontSize: 10.5, color: Color(0xFF94A3B8)),
                     ),
                   ],

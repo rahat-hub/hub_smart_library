@@ -27,9 +27,9 @@ class DashboardScreen extends StatelessWidget {
         desktop: _buildDesktopLayout(context, controller),
       ),
       bottomNavigationBar: ResponsiveLayout(
-        mobile: DashboardBottomNav(controller: controller, isTablet: false),
-        tablet: DashboardBottomNav(controller: controller, isTablet: true),
-        desktop: DashboardBottomNav(controller: controller, isTablet: true),
+        mobile: DashboardBottomNav(controller: controller, isTablet: false, activeIndex: 0),
+        tablet: DashboardBottomNav(controller: controller, isTablet: true, activeIndex: 0),
+        desktop: DashboardBottomNav(controller: controller, isTablet: true, activeIndex: 0),
       ),
     );
   }

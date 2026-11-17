@@ -24,8 +24,12 @@ class BorrowedBooksScreen extends StatelessWidget {
         ? Get.find<DashboardController>()
         : Get.put(DashboardController());
 
-    // Sync active nav index
-    dashboardController.currentNavIndex.value = 1;
+    // Sync active nav index safely after build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (dashboardController.currentNavIndex.value != 1) {
+        dashboardController.currentNavIndex.value = 1;
+      }
+    });
 
     return Scaffold(
       backgroundColor: AppColors.dashboardBg,
@@ -35,9 +39,9 @@ class BorrowedBooksScreen extends StatelessWidget {
         desktop: _buildDesktopLayout(context, controller, dashboardController),
       ),
       bottomNavigationBar: ResponsiveLayout(
-        mobile: DashboardBottomNav(controller: dashboardController, isTablet: false),
-        tablet: DashboardBottomNav(controller: dashboardController, isTablet: true),
-        desktop: DashboardBottomNav(controller: dashboardController, isTablet: true),
+        mobile: DashboardBottomNav(controller: dashboardController, isTablet: false, activeIndex: 1),
+        tablet: DashboardBottomNav(controller: dashboardController, isTablet: true, activeIndex: 1),
+        desktop: DashboardBottomNav(controller: dashboardController, isTablet: true, activeIndex: 1),
       ),
     );
   }
@@ -220,7 +224,7 @@ class BorrowedBooksScreen extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: books.length,
-        separatorBuilder: (_, __) => const SizedBox(height: 12),
+        separatorBuilder: (_, _) => const SizedBox(height: 12),
         itemBuilder: (context, index) {
           return BorrowedBookCard(
             book: books[index],

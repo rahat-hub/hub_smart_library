@@ -44,7 +44,7 @@ class CatalogSection extends StatelessWidget {
             ),
             Obx(
               () => Text(
-                '${controller.filteredCatalogBooks.length}টি তালিকাভুক্ত',
+                '${AppStrings.formatNumber(controller.filteredCatalogBooks.length)} ${AppStrings.isEnglish ? "Listed" : "টি তালিকাভুক্ত"}',
                 style: AppStyles.catalogCount,
               ),
             ),
@@ -62,9 +62,9 @@ class CatalogSection extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 28),
               alignment: Alignment.center,
-              child: const Text(
-                'কোন বই পাওয়া যায়নি',
-                style: TextStyle(color: AppColors.slateSubtitle),
+              child: Text(
+                AppStrings.noBooksFound,
+                style: const TextStyle(color: AppColors.slateSubtitle),
               ),
             );
           }

@@ -70,7 +70,7 @@ class StudentHeroCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 6),
                     Text(
-                      'একাডেমিক সেশন ২০২৪-২৫',
+                      AppStrings.isEnglish ? 'Academic Session 2024-25' : 'একাডেমিক সেশন ২০২৪-২৫',
                       style: AppStyles.heroSessionTag,
                     ),
                   ],
@@ -81,7 +81,7 @@ class StudentHeroCard extends StatelessWidget {
               Material(
                 color: Colors.transparent,
                 child: InkWell(
-                  onTap: controller.showDigitalPassDialog,
+                  onTap: controller.navigateToProfile,
                   borderRadius: BorderRadius.circular(12),
                   child: Container(
                     padding: const EdgeInsets.symmetric(
@@ -121,7 +121,7 @@ class StudentHeroCard extends StatelessWidget {
           // Greeting: স্বাগতম, তানভীর আহমেদ!
           Obx(
             () => Text(
-              'স্বাগতম, ${controller.studentName.value}!',
+              '${AppStrings.isEnglish ? "Welcome" : "স্বাগতম"}, ${controller.studentName.value}!',
               style: isTablet
                   ? AppStyles.heroGreetingTablet
                   : AppStyles.heroGreeting,
@@ -152,7 +152,7 @@ class StudentHeroCard extends StatelessWidget {
                     label: AppStrings.currentlyBorrowed,
                     valueWidget: Obx(
                       () => Text(
-                        '${controller.borrowedCount.value}টি বই',
+                        AppStrings.formatBooksCount(controller.borrowedCount.value),
                         style: AppStyles.heroStatValue,
                       ),
                     ),

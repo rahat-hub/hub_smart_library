@@ -65,9 +65,9 @@ class PopularBooksSection extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 28),
               alignment: Alignment.center,
-              child: const Text(
-                'কোন বই পাওয়া যায়নি',
-                style: TextStyle(color: AppColors.slateSubtitle),
+              child: Text(
+                AppStrings.noBooksFound,
+                style: const TextStyle(color: AppColors.slateSubtitle),
               ),
             );
           }

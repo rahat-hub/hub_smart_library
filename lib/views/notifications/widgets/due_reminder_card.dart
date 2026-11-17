@@ -133,7 +133,8 @@ class DueReminderCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      notification.dueTimeText ?? '৪:৩০ PM পর্যন্ত',
+                      notification.dueTimeText ??
+                          (AppStrings.isEnglish ? 'Until 4:30 PM' : '৪:৩০ PM পর্যন্ত'),
                       style: const TextStyle(
                         fontSize: 11.5,
                         fontWeight: FontWeight.bold,

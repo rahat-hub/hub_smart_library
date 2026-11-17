@@ -82,4 +82,17 @@ class AppColors {
 
   static const Color floatingBarNavy = Color(0xFF0C2B59);
   static const Color payFineRed = Color(0xFFDC2626);
+
+  // Student Profile & Digital Pass Colors
+  static const Color passCardGradientStart = Color(0xFF0F2B66);
+  static const Color passCardGradientMid = Color(0xFF143F86);
+  static const Color passCardGradientEnd = Color(0xFF0B214E);
+  static const Color verifiedGreen = Color(0xFF10B981);
+  static const Color badgeGreenBg = Color(0xFFD1FAE5);
+  static const Color badgeGreenText = Color(0xFF059669);
+  static const Color badgeBlueBg = Color(0xFFE0E7FF);
+  static const Color badgeBlueText = Color(0xFF3730A3);
+  static const Color dangerLogoutBg = Color(0xFFFEF2F2);
+  static const Color dangerLogoutBorder = Color(0xFFFECACA);
+  static const Color dangerLogoutText = Color(0xFFDC2626);
 }

@@ -9,7 +9,7 @@ class DashboardController extends GetxController {
   final RxInt currentNavIndex = 0.obs;
   final RxString selectedCategory = AppStrings.catAllBooks.obs;
   final RxString searchQuery = ''.obs;
-  late TextEditingController searchController;
+  TextEditingController searchController = TextEditingController();
 
   // Student details
   final RxString studentName = 'তাজুল ইসলাম'.obs;
@@ -181,7 +181,15 @@ class DashboardController extends GetxController {
         Get.toNamed(AppRoutes.notifications);
       }
     } else if (index == 3) {
-      showDigitalPassDialog();
+      if (Get.currentRoute != AppRoutes.profile) {
+        Get.toNamed(AppRoutes.profile);
+      }
+    }
+  }
+
+  void navigateToProfile() {
+    if (Get.currentRoute != AppRoutes.profile) {
+      Get.toNamed(AppRoutes.profile);
     }
   }
 

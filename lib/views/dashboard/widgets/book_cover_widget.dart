@@ -7,6 +7,7 @@ class BookCoverWidget extends StatelessWidget {
   final double? height;
   final double borderRadius;
   final bool isThumbnail;
+  final bool isCompact;
 
   const BookCoverWidget({
     super.key,
@@ -15,6 +16,7 @@ class BookCoverWidget extends StatelessWidget {
     this.height,
     this.borderRadius = 12.0,
     this.isThumbnail = false,
+    this.isCompact = false,
   });
 
   @override
@@ -40,7 +42,9 @@ class BookCoverWidget extends StatelessWidget {
           children: [
             // Background Artwork
             Positioned.fill(
-              child: _buildArtwork(),
+              child: ClipRect(
+                child: _buildArtwork(),
+              ),
             ),
 
             // Left book spine gradient effect
@@ -91,6 +95,8 @@ class BookCoverWidget extends StatelessWidget {
         return const Color(0xFF1B4965);
       case BookCoverStyle.discreteMathRosen:
         return const Color(0xFFF1F5F9);
+      case BookCoverStyle.algorithmsClrs:
+        return const Color(0xFF13366C);
     }
   }
 
@@ -118,6 +124,8 @@ class BookCoverWidget extends StatelessWidget {
         return _buildOperatingSystemsCover();
       case BookCoverStyle.discreteMathRosen:
         return _buildDiscreteMathCover();
+      case BookCoverStyle.algorithmsClrs:
+        return _buildAlgorithmsCover();
     }
   }
 
@@ -135,7 +143,7 @@ class BookCoverWidget extends StatelessWidget {
           ],
         ),
       ),
-      padding: EdgeInsets.all(isThumbnail ? 6 : 14),
+      padding: EdgeInsets.all(isThumbnail ? 5 : 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -144,31 +152,33 @@ class BookCoverWidget extends StatelessWidget {
             'Designing\nData-Intensive\nApplications',
             style: TextStyle(
               color: Colors.white,
-              fontSize: isThumbnail ? 7.5 : 13.5,
+              fontSize: isThumbnail ? 6.5 : 13.5,
               fontWeight: FontWeight.w800,
               height: 1.15,
             ),
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(height: isThumbnail ? 2 : 6),
-          Text(
-            'THE BIG IDEAS BEHIND RELIABLE,\nSCALABLE, AND MAINTAINABLE SYSTEMS',
-            style: TextStyle(
-              color: const Color(0xFF7DD3FC),
-              fontSize: isThumbnail ? 4 : 7,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 0.4,
+          if (!isThumbnail) ...[
+            const SizedBox(height: 6),
+            const Text(
+              'THE BIG IDEAS BEHIND RELIABLE,\nSCALABLE, AND MAINTAINABLE SYSTEMS',
+              style: TextStyle(
+                color: Color(0xFF7DD3FC),
+                fontSize: 7,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 0.4,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             ),
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-          ),
+          ],
           const Spacer(),
           // Center Network nodes graphic
           Center(
             child: Icon(
               Icons.hub_outlined,
-              size: isThumbnail ? 24 : 48,
+              size: isThumbnail ? 16 : 48,
               color: const Color(0xFF38BDF8).withValues(alpha: 0.8),
             ),
           ),
@@ -177,9 +187,11 @@ class BookCoverWidget extends StatelessWidget {
             'Martin Kleppmann',
             style: TextStyle(
               color: Colors.white.withValues(alpha: 0.9),
-              fontSize: isThumbnail ? 6 : 10,
+              fontSize: isThumbnail ? 5.5 : 10,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -190,64 +202,67 @@ class BookCoverWidget extends StatelessWidget {
   Widget _buildDeepLearningCover() {
     return Container(
       color: const Color(0xFFFAF7F2),
-      padding: EdgeInsets.all(isThumbnail ? 6 : 14),
+      padding: EdgeInsets.all(isThumbnail ? 5 : 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Container(
-                width: isThumbnail ? 4 : 8,
-                height: isThumbnail ? 4 : 8,
-                decoration: const BoxDecoration(
-                  color: Color(0xFFE11D48),
-                  shape: BoxShape.circle,
+          if (!isThumbnail)
+            Row(
+              children: [
+                Container(
+                  width: 8,
+                  height: 8,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFE11D48),
+                    shape: BoxShape.circle,
+                  ),
                 ),
-              ),
-              const SizedBox(width: 4),
-              Text(
-                'MANNING',
-                style: TextStyle(
-                  fontSize: isThumbnail ? 5 : 8,
-                  fontWeight: FontWeight.w800,
-                  color: const Color(0xFF334155),
-                  letterSpacing: 0.8,
+                const SizedBox(width: 4),
+                const Text(
+                  'MANNING',
+                  style: TextStyle(
+                    fontSize: 8,
+                    fontWeight: FontWeight.w800,
+                    color: Color(0xFF334155),
+                    letterSpacing: 0.8,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: isThumbnail ? 3 : 8),
+              ],
+            ),
+          if (!isThumbnail) const SizedBox(height: 8),
           Text(
-            'DEEP\nLEARNING\nWITH PYTHON',
+            'DEEP\nLEARNING',
             style: TextStyle(
               color: const Color(0xFF0F172A),
-              fontSize: isThumbnail ? 7.5 : 13.5,
+              fontSize: isThumbnail ? 7 : 13.5,
               fontWeight: FontWeight.w900,
               height: 1.1,
             ),
-            maxLines: 3,
+            maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(height: isThumbnail ? 2 : 4),
-          Text(
-            'SECOND EDITION',
-            style: TextStyle(
-              color: const Color(0xFF2563EB),
-              fontSize: isThumbnail ? 4.5 : 7.5,
-              fontWeight: FontWeight.w700,
+          if (!isThumbnail) ...[
+            const SizedBox(height: 4),
+            const Text(
+              'SECOND EDITION',
+              style: TextStyle(
+                color: Color(0xFF2563EB),
+                fontSize: 7.5,
+                fontWeight: FontWeight.w700,
+              ),
             ),
-          ),
+          ],
           const Spacer(),
           Center(
             child: Container(
-              padding: EdgeInsets.all(isThumbnail ? 4 : 8),
+              padding: EdgeInsets.all(isThumbnail ? 3 : 8),
               decoration: BoxDecoration(
                 color: const Color(0xFFF1E9DB),
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(6),
               ),
               child: Icon(
                 Icons.psychology_rounded,
-                size: isThumbnail ? 22 : 42,
+                size: isThumbnail ? 16 : 42,
                 color: const Color(0xFF475569),
               ),
             ),
@@ -257,9 +272,11 @@ class BookCoverWidget extends StatelessWidget {
             'François Chollet',
             style: TextStyle(
               color: const Color(0xFF334155),
-              fontSize: isThumbnail ? 6 : 10,
+              fontSize: isThumbnail ? 5.5 : 10,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -279,7 +296,7 @@ class BookCoverWidget extends StatelessWidget {
           ],
         ),
       ),
-      padding: EdgeInsets.all(isThumbnail ? 6 : 14),
+      padding: EdgeInsets.all(isThumbnail ? 5 : 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -287,27 +304,29 @@ class BookCoverWidget extends StatelessWidget {
             'MICROSERVICES\nPATTERNS',
             style: TextStyle(
               color: Colors.white,
-              fontSize: isThumbnail ? 7.5 : 13.5,
+              fontSize: isThumbnail ? 6.5 : 13.5,
               fontWeight: FontWeight.w900,
               height: 1.15,
             ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(height: isThumbnail ? 2 : 4),
-          Text(
-            'WITH EXAMPLES IN JAVA',
-            style: TextStyle(
-              color: const Color(0xFFFBBF24),
-              fontSize: isThumbnail ? 4.5 : 7.5,
-              fontWeight: FontWeight.w700,
+          if (!isThumbnail) ...[
+            const SizedBox(height: 4),
+            const Text(
+              'WITH EXAMPLES IN JAVA',
+              style: TextStyle(
+                color: Color(0xFFFBBF24),
+                fontSize: 7.5,
+                fontWeight: FontWeight.w700,
+              ),
             ),
-          ),
+          ],
           const Spacer(),
           Center(
             child: Icon(
               Icons.lan_outlined,
-              size: isThumbnail ? 22 : 44,
+              size: isThumbnail ? 16 : 44,
               color: const Color(0xFF38BDF8),
             ),
           ),
@@ -316,9 +335,11 @@ class BookCoverWidget extends StatelessWidget {
             'Chris Richardson',
             style: TextStyle(
               color: Colors.white.withValues(alpha: 0.9),
-              fontSize: isThumbnail ? 6 : 10,
+              fontSize: isThumbnail ? 5.5 : 10,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -338,37 +359,40 @@ class BookCoverWidget extends StatelessWidget {
           ],
         ),
       ),
-      padding: EdgeInsets.all(isThumbnail ? 6 : 10),
+      padding: EdgeInsets.all(isThumbnail ? 5 : 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 10,
         children: [
           Text(
             'Introduction to\nAlgorithms',
             style: TextStyle(
               color: Colors.white,
-              fontSize: isThumbnail ? 8 : 12,
+              fontSize: isThumbnail ? 6.5 : 12,
               fontWeight: FontWeight.w800,
               height: 1.15,
             ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
-
+          const Spacer(),
           Center(
             child: Icon(
               Icons.account_tree_outlined,
-              size: isThumbnail ? 20 : 36,
+              size: isThumbnail ? 16 : 36,
               color: const Color(0xFF67E8F9),
             ),
           ),
-
+          const Spacer(),
           Text(
             'CLRS',
             style: TextStyle(
               color: const Color(0xFFBAE6FD),
-              fontSize: isThumbnail ? 6 : 9,
+              fontSize: isThumbnail ? 5.5 : 9,
               fontWeight: FontWeight.w700,
               letterSpacing: 1.0,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -382,44 +406,51 @@ class BookCoverWidget extends StatelessWidget {
         color: Colors.white,
         border: Border.all(color: const Color(0xFFE2E8F0)),
       ),
-      padding: EdgeInsets.all(isThumbnail ? 6 : 10),
+      padding: EdgeInsets.all(isThumbnail ? 4 : 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-            color: const Color(0xFF0284C7),
-            child: Text(
-              'A HANDBOOK OF AGILE',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: isThumbnail ? 4 : 6,
-                fontWeight: FontWeight.w700,
+          if (!isThumbnail) ...[
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+              color: const Color(0xFF0284C7),
+              child: const Text(
+                'A HANDBOOK OF AGILE',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 6,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: isThumbnail ? 3 : 6),
+            const SizedBox(height: 6),
+          ],
           Text(
             'Clean Code',
             style: TextStyle(
               color: const Color(0xFF0F172A),
-              fontSize: isThumbnail ? 9 : 14,
+              fontSize: isThumbnail ? 7.5 : 14,
               fontWeight: FontWeight.w900,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
           const Spacer(),
           Center(
             child: Container(
-              width: isThumbnail ? 22 : 36,
-              height: isThumbnail ? 22 : 36,
+              width: isThumbnail ? 16 : 36,
+              height: isThumbnail ? 16 : 36,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: const Color(0xFF0284C7), width: 2),
+                border: Border.all(
+                  color: const Color(0xFF0284C7),
+                  width: isThumbnail ? 1.5 : 2,
+                ),
               ),
-              child: const Icon(
+              child: Icon(
                 Icons.check_rounded,
-                size: 16,
-                color: Color(0xFF0284C7),
+                size: isThumbnail ? 11 : 16,
+                color: const Color(0xFF0284C7),
               ),
             ),
           ),
@@ -428,9 +459,11 @@ class BookCoverWidget extends StatelessWidget {
             'Robert C. Martin',
             style: TextStyle(
               color: const Color(0xFF475569),
-              fontSize: isThumbnail ? 6 : 9,
+              fontSize: isThumbnail ? 5.5 : 9,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -450,39 +483,41 @@ class BookCoverWidget extends StatelessWidget {
           ],
         ),
       ),
-      padding: EdgeInsets.all(isThumbnail ? 6 : 10),
-      child: Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'ARTIFICIAL\nINTELLIGENCE',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: isThumbnail ? 7.5 : 12,
-                fontWeight: FontWeight.w900,
-                height: 1.1,
-              ),
+      padding: EdgeInsets.all(isThumbnail ? 4 : 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'ARTIFICIAL\nINTELLIGENCE',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: isThumbnail ? 6.5 : 12,
+              fontWeight: FontWeight.w900,
+              height: 1.1,
             ),
-            const Spacer(),
-            Center(
-              child: Icon(
-                Icons.smart_toy_outlined,
-                size: isThumbnail ? 20 : 36,
-                color: const Color(0xFFF472B6),
-              ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+          const Spacer(),
+          Center(
+            child: Icon(
+              Icons.smart_toy_outlined,
+              size: isThumbnail ? 16 : 36,
+              color: const Color(0xFFF472B6),
             ),
-            const Spacer(),
-            Text(
-              'Russell & Norvig',
-              style: TextStyle(
-                color: const Color(0xFFE2E8F0),
-                fontSize: isThumbnail ? 6 : 9,
-                fontWeight: FontWeight.w500,
-              ),
+          ),
+          const Spacer(),
+          Text(
+            'Russell & Norvig',
+            style: TextStyle(
+              color: const Color(0xFFE2E8F0),
+              fontSize: isThumbnail ? 5.5 : 9,
+              fontWeight: FontWeight.w500,
             ),
-          ],
-        ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
       ),
     );
   }
@@ -494,24 +529,26 @@ class BookCoverWidget extends StatelessWidget {
         color: const Color(0xFFF8FAFC),
         border: Border.all(color: const Color(0xFFE2E8F0)),
       ),
-      padding: EdgeInsets.all(isThumbnail ? 6 : 10),
+      padding: EdgeInsets.all(isThumbnail ? 4 : 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'DATABASE\nSYSTEM\nCONCEPTS',
+            isThumbnail ? 'DATABASE\nSYSTEMS' : 'DATABASE\nSYSTEM\nCONCEPTS',
             style: TextStyle(
               color: const Color(0xFF1E293B),
-              fontSize: isThumbnail ? 7 : 11,
+              fontSize: isThumbnail ? 6.5 : 11,
               fontWeight: FontWeight.w900,
               height: 1.1,
             ),
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
           ),
           const Spacer(),
           Center(
             child: Icon(
               Icons.storage_rounded,
-              size: isThumbnail ? 20 : 36,
+              size: isThumbnail ? 16 : 36,
               color: const Color(0xFF0D9488),
             ),
           ),
@@ -520,9 +557,11 @@ class BookCoverWidget extends StatelessWidget {
             'Silberschatz',
             style: TextStyle(
               color: const Color(0xFF64748B),
-              fontSize: isThumbnail ? 6 : 9,
+              fontSize: isThumbnail ? 5.5 : 9,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -543,65 +582,79 @@ class BookCoverWidget extends StatelessWidget {
           ],
         ),
       ),
-      padding: EdgeInsets.all(isThumbnail ? 6 : 12),
+      padding: EdgeInsets.all(isThumbnail ? 5 : 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Title
           Text(
-            'DATA STRUCTURES\nAND ALGORITHMS\nIN PYTHON',
+            isThumbnail ? 'DATA STRUCTURES\nIN PYTHON' : 'DATA STRUCTURES\nAND ALGORITHMS\nIN PYTHON',
             style: TextStyle(
               color: Colors.white,
-              fontSize: isThumbnail ? 7 : 11.5,
+              fontSize: isThumbnail ? 6.5 : 11.5,
               fontWeight: FontWeight.w900,
               letterSpacing: 0.3,
               height: 1.15,
             ),
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(height: isThumbnail ? 2 : 4),
-          Text(
-            'Michael T. Goodrich\nRoberto Tamassia',
-            style: TextStyle(
-              color: const Color(0xFF93C5FD),
-              fontSize: isThumbnail ? 4.5 : 7,
-              fontWeight: FontWeight.w500,
-              height: 1.1,
-            ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
+          if (!isThumbnail) ...[
+            const SizedBox(height: 4),
+            const Text(
+              'Michael T. Goodrich\nRoberto Tamassia',
+              style: TextStyle(
+                color: Color(0xFF93C5FD),
+                fontSize: 7,
+                fontWeight: FontWeight.w500,
+                height: 1.1,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
           const Spacer(),
           // Geodesic / Polygonal Network Mesh Graphic
           Center(
             child: Icon(
               Icons.blur_on_rounded,
-              size: isThumbnail ? 22 : 42,
+              size: isThumbnail ? 16 : 42,
               color: const Color(0xFF38BDF8).withValues(alpha: 0.85),
             ),
           ),
           const Spacer(),
           // Bottom Wiley / Logo line
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'WILEY',
-                style: TextStyle(
-                  color: Colors.white.withValues(alpha: 0.9),
-                  fontSize: isThumbnail ? 5 : 8,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.0,
+          if (!isThumbnail)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'WILEY',
+                  style: TextStyle(
+                    color: Colors.white.withValues(alpha: 0.9),
+                    fontSize: isThumbnail ? 5 : 8,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 1.0,
+                  ),
                 ),
+                Icon(
+                  Icons.code_rounded,
+                  size: isThumbnail ? 8 : 12,
+                  color: const Color(0xFF67E8F9),
+                ),
+              ],
+            )
+          else
+            Text(
+              'Goodrich',
+              style: TextStyle(
+                color: Colors.white.withValues(alpha: 0.9),
+                fontSize: 5.5,
+                fontWeight: FontWeight.w600,
               ),
-              Icon(
-                Icons.code_rounded,
-                size: isThumbnail ? 8 : 12,
-                color: const Color(0xFF67E8F9),
-              ),
-            ],
-          ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
         ],
       ),
     );
@@ -626,19 +679,21 @@ class BookCoverWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1.5),
-            color: const Color(0xFF0284C7),
-            child: Text(
-              'SEVENTH EDITION',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: isThumbnail ? 3.5 : 6,
-                fontWeight: FontWeight.w700,
+          if (!isThumbnail) ...[
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1.5),
+              color: const Color(0xFF0284C7),
+              child: const Text(
+                'SEVENTH EDITION',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 6,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: isThumbnail ? 2 : 4),
+            const SizedBox(height: 4),
+          ],
           Text(
             'COMPUTER\nNETWORKING',
             style: TextStyle(
@@ -648,12 +703,14 @@ class BookCoverWidget extends StatelessWidget {
               letterSpacing: 0.3,
               height: 1.1,
             ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
           const Spacer(),
           Center(
             child: Icon(
               Icons.language_rounded,
-              size: isThumbnail ? 20 : 38,
+              size: isThumbnail ? 16 : 38,
               color: const Color(0xFF38BDF8),
             ),
           ),
@@ -662,9 +719,11 @@ class BookCoverWidget extends StatelessWidget {
             'Kurose & Ross',
             style: TextStyle(
               color: Colors.white.withValues(alpha: 0.9),
-              fontSize: isThumbnail ? 5 : 8,
+              fontSize: isThumbnail ? 5.5 : 8,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -689,7 +748,7 @@ class BookCoverWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'OPERATING\nSYSTEM\nCONCEPTS',
+            isThumbnail ? 'OPERATING\nSYSTEMS' : 'OPERATING\nSYSTEM\nCONCEPTS',
             style: TextStyle(
               color: Colors.white,
               fontSize: isThumbnail ? 6.5 : 11,
@@ -697,21 +756,25 @@ class BookCoverWidget extends StatelessWidget {
               letterSpacing: 0.2,
               height: 1.1,
             ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(height: isThumbnail ? 2 : 4),
-          Text(
-            'Tenth Edition',
-            style: TextStyle(
-              color: const Color(0xFF38BDF8),
-              fontSize: isThumbnail ? 4 : 7,
-              fontWeight: FontWeight.w600,
+          if (!isThumbnail) ...[
+            const SizedBox(height: 4),
+            const Text(
+              'Tenth Edition',
+              style: TextStyle(
+                color: Color(0xFF38BDF8),
+                fontSize: 7,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
+          ],
           const Spacer(),
           Center(
             child: Icon(
               Icons.pets_rounded,
-              size: isThumbnail ? 18 : 34,
+              size: isThumbnail ? 16 : 34,
               color: const Color(0xFFFBBF24).withValues(alpha: 0.85),
             ),
           ),
@@ -720,9 +783,11 @@ class BookCoverWidget extends StatelessWidget {
             'Silberschatz',
             style: TextStyle(
               color: Colors.white.withValues(alpha: 0.85),
-              fontSize: isThumbnail ? 5 : 8,
+              fontSize: isThumbnail ? 5.5 : 8,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
@@ -741,7 +806,7 @@ class BookCoverWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'DISCRETE\nMATHEMATICS',
+            isThumbnail ? 'DISCRETE\nMATH' : 'DISCRETE\nMATHEMATICS',
             style: TextStyle(
               color: const Color(0xFF0F172A),
               fontSize: isThumbnail ? 6.5 : 11,
@@ -749,32 +814,38 @@ class BookCoverWidget extends StatelessWidget {
               letterSpacing: 0.2,
               height: 1.1,
             ),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
-          SizedBox(height: isThumbnail ? 2 : 4),
-          Text(
-            '& ITS APPLICATIONS',
-            style: TextStyle(
-              color: const Color(0xFF0284C7),
-              fontSize: isThumbnail ? 4 : 7,
-              fontWeight: FontWeight.w700,
+          if (!isThumbnail) ...[
+            const SizedBox(height: 4),
+            const Text(
+              '& ITS APPLICATIONS',
+              style: TextStyle(
+                color: Color(0xFF0284C7),
+                fontSize: 7,
+                fontWeight: FontWeight.w700,
+              ),
             ),
-          ),
+          ],
           const Spacer(),
           Center(
             child: Icon(
               Icons.polyline_rounded,
-              size: isThumbnail ? 18 : 36,
+              size: isThumbnail ? 16 : 36,
               color: const Color(0xFF64748B),
             ),
           ),
           const Spacer(),
           Text(
-            'Kenneth H. Rosen',
+            'Rosen',
             style: TextStyle(
               color: const Color(0xFF334155),
-              fontSize: isThumbnail ? 5 : 8,
+              fontSize: isThumbnail ? 5.5 : 8,
               fontWeight: FontWeight.w600,
             ),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),

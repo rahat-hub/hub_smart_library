@@ -12,6 +12,7 @@ enum BookCoverStyle {
   networkingKurose,
   operatingSystemsDino,
   discreteMathRosen,
+  algorithmsClrs,
 }
 
 class BookModel {
