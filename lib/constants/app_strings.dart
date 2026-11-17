@@ -422,4 +422,133 @@ class AppStrings {
   static String get copyrightCentralLibrary => isEnglish
       ? 'Copyright © Central Library & Information Center'
       : 'কপিরাইট © কেন্দ্রীয় গ্রন্থাগার ও তথ্যকেন্দ্র';
+
+  // Student Registration Strings
+  static String get registrationTitle => isEnglish ? 'Student Registration' : 'Student Sso Login';
+  static String get regHeroBadge =>
+      isEnglish ? '• Collection Academic Session 2024-25' : '• কালেকশন শিক্ষা-সেশন ২০২৪-২৫';
+  static String get regHeroTitle =>
+      isEnglish ? 'Create New Library Membership' : 'নতুন লাইব্রেরি মেম্বারশিপ তৈরি করুন';
+  static String get regHeroSubtitle => isEnglish
+      ? 'Create an automated digital library smart card linked with your university ID'
+      : 'বিশ্ববিদ্যালয়ের আইডি কার্ডের সাথে সংযুক্ত স্বয়ংক্রিয় ডিজিটাল লাইব্রেরি স্মার্ট কার্ড তৈরি করুন';
+  static String get stepIndicatorTitle =>
+      isEnglish ? 'Student Profile & Security' : 'শিক্ষার্থী প্রোফাইল ও নিরাপত্তা';
+  static String get step1and2 => isEnglish ? 'Steps 1 & 2' : 'ধাপ ১ ও ২';
+  static String get completion75 => isEnglish ? '75% Completed' : '৭৫% সম্পন্ন';
+  static String get subStep1 =>
+      isEnglish ? '1. Personal & Academic Info' : '১. ব্যক্তিগত ও শিক্ষা তথ্য';
+  static String get subStep2 =>
+      isEnglish ? '2. Authentication & PIN' : '২. অথেনটিকেশন ও পিন';
+
+  static String get step1Header =>
+      isEnglish ? 'Step 1: Academic & Personal Info' : 'ধাপ ১: একাডেমিক ও ব্যক্তিগত তথ্য';
+  static String get profileDetailsTag => 'Profile Details';
+  static String get labelFullName =>
+      isEnglish ? 'Full Name (as per Admit Card)' : 'পুরো নাম (Full Name as per Admit Card)';
+  static String get verifiedBadge => isEnglish ? 'Verified' : 'যাচাইকৃত';
+  static String get defaultFullNameVal =>
+      isEnglish ? 'Tanvir Ahmed' : 'তানভীর আহমেদ / Tanvir Ahmed';
+
+  static String get labelStudentIdRoll =>
+      isEnglish ? 'Student ID / Roll' : 'শিক্ষার্থী আইডি / রোল (Student ID)';
+  static String get activeIdDetected =>
+      isEnglish ? 'Active ID Detected' : 'সক্রিয় আইডি শনাক্ত';
+  static String get verifiedText => isEnglish ? 'Verified' : 'ভেরিফাইড';
+  static String get defaultStudentIdVal => 'CSE-2021-042';
+
+  static String get labelDeptFaculty =>
+      isEnglish ? 'Department & Faculty' : 'বিভাগ ও অনুষদ (Department & Faculty)';
+  static String get defaultDeptVal => isEnglish
+      ? 'Computer Science & Engineering (CSE)'
+      : 'কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং (CSE)';
+  static String get defaultFacultyVal => 'Faculty of Engineering & Technology';
+
+  static String get labelSession => isEnglish ? 'Session' : 'শিক্ষাবর্ষ (Session)';
+  static String get defaultSessionVal => isEnglish ? '2020-21' : '২০২০-২১';
+
+  static String get labelSemester => isEnglish ? 'Semester' : 'সেমিস্টার (Semester)';
+  static String get defaultSemesterVal => isEnglish ? '8th Semester' : '৮ম সেমিস্টার';
+
+  static String get labelInstEmail =>
+      isEnglish ? 'Institutional Email' : 'প্রাতিষ্ঠানিক ইমেইল (Institutional Email)';
+  static String get allowedDomainBadge =>
+      isEnglish ? 'Approved Domain' : 'অনুমোদিত ডোমেইন';
+  static String get defaultEmailUserVal => 'tanvir.cse';
+  static String get emailDomainSuffix => '@univ.edu.bd';
+  static String get instEmailNote => isEnglish
+      ? 'Digital clearance and book issue confirmation codes will be sent to this email.'
+      : 'ডিজিটাল ক্লিয়ারেন্স ও বই উত্তোলনের কনফার্মেশন কোড এই ইমেইলে যাবে।';
+
+  static String get labelMobileNumber => isEnglish
+      ? 'Mobile Number (SMS Alert & Return Notice)'
+      : 'মোবাইল নম্বর (SMS Alert & Return Notice)';
+  static String get smsServiceBadge => isEnglish ? 'SMS Service' : 'SMS সার্ভিস';
+  static String get defaultPhonePrefix => '+৮৮০';
+  static String get defaultPhoneVal => '1712345678';
+
+  // Step 2: Security & Identity
+  static String get step2Header => isEnglish
+      ? 'Step 2: Identity Verification & Security'
+      : 'ধাপ ২: পরিচয়পত্র যাচাই ও পাসওয়ার্ড';
+  static String get securityPassTag => 'Security & Pass';
+  static String get studentIdFrontScan => isEnglish
+      ? 'Student ID Card Scan (Front View)'
+      : 'স্টুডেন্ট আইডি কার্ড স্ক্যান (Front View)';
+  static String get maxFileSizeNote =>
+      isEnglish ? 'Max 5 MB (JPG, PNG, PDF)' : 'সর্বোচ্চ ৫ MB (JPG, PNG, PDF)';
+
+  static String get uploadBoxTitle => isEnglish
+      ? 'Take photo of ID card or scan RFID'
+      : 'আইডি কার্ডের ছবি তুলুন বা আরএফআইডি স্ক্যান করুন';
+  static String get uploadBoxSubtitle => isEnglish
+      ? 'Display front side of digital ID card clearly so name & roll are readable'
+      : 'ডিজিটাল আইডি কার্ডের সামনের পৃষ্ঠা পরিষ্কারভাবে প্রদর্শন করুন যাতে নাম ও রোল নম্বর স্পষ্ট থাকে';
+  static String get btnOpenCamera => isEnglish ? 'Open Camera' : 'ক্যামেরা খুলুন';
+  static String get btnUploadFile => isEnglish ? 'Upload File' : 'ফাইল আপলোড';
+  static String get defaultUploadedFileName => 'student_id_front_cse042.jpg';
+  static String get defaultUploadedFileSize => isEnglish
+      ? '1.8 MB • Auto-processing completed'
+      : '১.৮ MB • স্বয়ংক্রিয় প্রক্রিয়াকরণ সমাপ্ত';
+
+  static String get labelCreatePassword => isEnglish
+      ? 'Create Library Portal Password'
+      : 'লাইব্রেরি পোর্টাল পাসওয়ার্ড তৈরি করুন (Create Password)';
+  static String get passwordStrengthSecure =>
+      isEnglish ? 'Safe & Strong' : 'নিরাপদ ও শক্তিশালী (Strong)';
+  static String get req8Chars => isEnglish ? '8+ characters' : '৮+ অক্ষর';
+  static String get reqUpperLower => isEnglish ? 'Upper & lowercase' : 'বড় ও ছোট হাত';
+  static String get reqSpecial => isEnglish ? 'Special symbols' : 'বিশেষ চিহ্ন ব্যবহার';
+
+  static String get labelConfirmPassword =>
+      isEnglish ? 'Confirm Password' : 'পাসওয়ার্ড নিশ্চিত করুন (Confirm Password)';
+
+  static String get smartPassPreviewTitle => 'UNIVERSITY SMART PASS';
+  static String get instantVirtualId => isEnglish ? 'Instant Virtual ID' : 'ইনস্ট্যান্ট ভার্চুয়াল আইডি';
+  static String get smartPassReadyNote => isEnglish
+      ? 'Once registered, this smart pass will be valid for self-kiosk use'
+      : 'রেজিস্ট্রেশন সম্পন্ন হলে এই স্মার্ট পাস কিওস্কে ব্যবহারের যোগ্য হবে';
+
+  static String get termsCheckboxText => isEnglish
+      ? 'I agree to all Central Library book borrowing, punctuality, refund, digital copyright, and overdue fine policies.'
+      : 'আমি সেন্ট্রাল লাইব্রেরির বই ইস্যু, সময়ানুবর্তিতা ও রিফান্ড, ডিজিটাল কপিরাইট এবং বিলম্ব জরিমানা সংক্রান্ত সকল নীতিমালার সাথে একমত।';
+  static String get libraryRulesLink => isEnglish
+      ? 'Read detailed Library Rules & Policies'
+      : 'লাইব্রেরি শর্তাবলী ও পলিসি বিস্তারিত পড়ুন (Library Rules)';
+  static String get autoApprovalInfo => isEnglish
+      ? 'Upon approval, a smart pass QR code will be generated and emailed to your institutional inbox.'
+      : 'অনুমোদনের পর স্বয়ংক্রিয়ভাবে একটি স্মার্ট পাস কিউআর কোড জেনারেট হয়ে আপনার ইমেইলে প্রেরণ করা হবে।';
+
+  static String get btnCompleteRegistration => isEnglish
+      ? 'Complete Registration'
+      : 'রেজিস্ট্রেশন সম্পন্ন করুন (Complete Registration)';
+  static String get alreadyHaveAccount =>
+      isEnglish ? 'Already have an account? ' : 'ইতিমধ্যেই একাউন্ট আছে? ';
+  static String get backToLogin =>
+      isEnglish ? 'Log In (Back to Login)' : 'লগইন করুন (Back to Login)';
+
+  static String get needHelpQuestion => isEnglish ? 'Need assistance?' : 'সহায়তার প্রয়োজন হলে?';
+  static String get helpdeskHoursShort =>
+      isEnglish ? 'Library Helpdesk (9 AM - 5 PM)' : 'লাইব্রেরি হেল্পডেস্ক (সকাল ৯টা - বিকাল ৫টা)';
+  static String get btnHelpline => isEnglish ? 'Helpline' : 'হেল্পলাইন';
 }

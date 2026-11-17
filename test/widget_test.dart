@@ -443,4 +443,64 @@ void main() {
     expect(find.text(AppStrings.studentNameDefault), findsOneWidget);
     expect(find.text(AppStrings.centralLibraryBadge), findsOneWidget);
   });
+
+  testWidgets('Student Registration Mobile Viewport (390x844) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    // Tap "লাইব্রেরি একাউন্ট সক্রিয় করুন"
+    await tester.ensureVisible(find.text(AppStrings.activateAccount));
+    await tester.tap(find.text(AppStrings.activateAccount));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    // Verify Registration Screen Elements
+    expect(find.text(AppStrings.regHeroTitle), findsOneWidget);
+    expect(find.text(AppStrings.stepIndicatorTitle), findsOneWidget);
+    expect(find.text(AppStrings.step1Header), findsOneWidget);
+    expect(find.text(AppStrings.step2Header), findsOneWidget);
+    expect(find.text(AppStrings.smartPassPreviewTitle), findsOneWidget);
+  });
+
+  testWidgets('Student Registration Tablet Viewport (768x1024) test',
+      (WidgetTester tester) async {
+    tester.view.physicalSize = const Size(768, 1024);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(() {
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+
+    await tester.pumpWidget(const HubSmartLibraryApp());
+    await tester.pump(const Duration(milliseconds: 600));
+
+    // Splash -> Login
+    await tester.tap(find.text(AppStrings.getStartedBtn));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    // Tap "লাইব্রেরি একাউন্ট সক্রিয় করুন"
+    await tester.ensureVisible(find.text(AppStrings.activateAccount));
+    await tester.tap(find.text(AppStrings.activateAccount));
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.pump(const Duration(milliseconds: 500));
+
+    // Verify Registration Elements on Tablet
+    expect(find.text(AppStrings.regHeroTitle), findsOneWidget);
+    expect(find.text(AppStrings.registrationTitle), findsOneWidget);
+    expect(find.text(AppStrings.btnUploadFile), findsOneWidget);
+  });
 }

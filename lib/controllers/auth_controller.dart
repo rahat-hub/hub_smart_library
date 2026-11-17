@@ -261,16 +261,6 @@ class AuthController extends GetxController {
   }
 
   void showAccountActivation() {
-    Get.defaultDialog(
-      title: 'লাইব্রেরি একাউন্ট সক্রিয়করণ',
-      titleStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-      middleText:
-          'নতুন শিক্ষার্থীরা আপনার অ্যাডমিশন রোল নম্বর এবং বিভাগীয় ইমেইল দিয়ে রেজিস্টার করতে পারেন।',
-      textConfirm: 'রেজিস্টার করুন',
-      confirmTextColor: Colors.white,
-      buttonColor: const Color(0xFF0F766E),
-      radius: 16,
-      onConfirm: () => Get.back(),
-    );
+    Get.toNamed(AppRoutes.register);
   }
 }
